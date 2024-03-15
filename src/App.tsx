@@ -12,14 +12,11 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Routes>
-        <Route path={"/"} element={<Home />} />
-        <Route path={"/shop"} element={<Specials />} />
-        <Route path={"/about"} element={<AboutUsPage />} />
-        <Route path={"/contactus"} element={<ContactUsPage />} />
-        <Route path={"/contactus"} element={<Specials />} />
-        <Route path={"/gifts"} element={<GiftBoxPage />} />
-      </Routes>
+      <Route path={"/"} element={<Home />} />
+      <Route path={"/shop"} element={<Specials />} />
+      <Route path={"/about"} element={<AboutUsPage />} />
+      <Route path={"/contactus"} element={<ContactUsPage />} />
+      <Route path={"/contactus"} element={<Specials />} />
       <Footer />
     </BrowserRouter>
   );
