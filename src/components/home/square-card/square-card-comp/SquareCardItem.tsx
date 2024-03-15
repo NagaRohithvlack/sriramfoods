@@ -1,4 +1,4 @@
-export default function SquareCardItem({ item }) {
+export default function SquareCardItem({ item }: any) {
   return (
     <div className="border border-pink-500 relative rounded-lg">
       <img src={item.img} alt="" className="rounded-lg h-full" />
