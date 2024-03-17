@@ -1,15 +1,24 @@
-import borderimg from "../../../assets/images/borderimg.png"
-
+import borderimg from "../../../assets/images/borderimg.png";
 
 function BorderLine() {
-    return (
-        <div className="flex">
-        <div className="flex md:w-[65px] ">
-             <img src={borderimg} alt="" className="w-full rotate-90  "  />
-        </div>
-        
-        </div>
-    )
+  return (
+    <div className="flex">
+      <div className="flex md:w-[65px] ">
+        {Array(19)
+          .fill(0)
+          .map((index: number) => {
+            return (
+              <img
+                key={index}
+                src={borderimg}
+                alt=""
+                className="w-full rotate-90"
+              />
+            );
+          })}
+      </div>
+    </div>
+  );
 }
 
 export default BorderLine;
