@@ -1,6 +1,8 @@
 import KajuKatli from '../../../../assets/images/kaju-katli.jpg'
+import Rasamali from "../../../../assets/images/rasamalai.jpg";
 export const OrderItemData = [
   {
+    id:1,
     img: KajuKatli,
     itemTitle: "Kaju Katli",
     itemOfferAmount: "360",
@@ -15,4 +17,20 @@ export const OrderItemData = [
     quantity: "0",
     usageNote: "Best Before 30-days after packing",
   },
+  // {
+  //   id:2,
+  //   img: Rasamali,
+  //   itemTitle: "Rasa Malai",
+  //   itemOfferAmount: "300",
+  //       itemOriginalAmount: "499",
+  //   offer:"40%",
+  //   itemMrpDescription: "(MRP inclusive of all taxes)",
+  //   starReviews: "reviews",
+  //   size: "Size",
+  //   grams1: "250gm",
+  //   grams2: "500gm",
+  //   quantityDescription: "Quantity",
+  //   quantity: "0",
+  //   usageNote: "Best Before 30-days after packing",
+  // },
 ];

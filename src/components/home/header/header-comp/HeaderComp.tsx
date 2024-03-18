@@ -2,69 +2,122 @@ import Logo from "../../../../assets/images/logo.png";
 import Search from "../../../../assets/images/search.png";
 import User from "../../../../assets/images/user.png";
 import Cart from "../../../../assets/images/shopping-cart.png";
+import menu from "../../../../assets/images/menu.png";
+import close from "../../../../assets/images/close.png";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 export default function HeaderComp() {
+  const [isOpenSideBar, setIsOpenSideBar] = useState(false);
   const navigate = useNavigate();
+  const orderItems = useSelector((store) => {
+    console.log(store.cart.items);
+    return store.cart.items;
+  });
+  function handleOpenSideBar() {
+    setIsOpenSideBar(!isOpenSideBar);
+  }
+  function handleCloseSideBar() {
+    setIsOpenSideBar(!isOpenSideBar);
+  }
   return (
-    <div className="flex justify-between px-5 items-center">
-      <div className="w-full max-h-[150px] ">
-        <img src={Logo} alt="" className="h-[150px] " />
-      </div>
-      <ul className="flex w-full gap-4 ">
-        <li
-          className={`hover:cursor-pointer`}
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          Home
-        </li>
-        <li
-          className={`hover:cursor-pointer`}
-          onClick={() => {
-            navigate("shop");
-          }}
-        >
-          Shop
-        </li>
-        <li
-          className={`hover:cursor-pointer`}
-          onClick={() => {
-            navigate("gifts");
-          }}
-        >
-          Gifts
-        </li>
-        <li
-          className={`hover:cursor-pointer`}
-          onClick={() => {
-            navigate("about");
-          }}
-        >
-          About Us
-        </li>
-        <li
-          className={`hover:cursor-pointer`}
-          onClick={() => {
-            navigate("contactus");
-          }}
-        >
-          Contact Us
-        </li>
-      </ul>
-      <ul className="flex w-full justify-center ">
-        <div className="flex gap-10">
-          <li>
-            <img src={Search} alt="" className="w-5" />
-          </li>
-          <li>
-            <img src={User} alt="" className="w-5" />
-          </li>
-          <li>
-            <img src={Cart} alt="" className="w-5" />
-          </li>
+    <div className="relative">
+      <div className="flex py-2 px-4 shadow-md bg-slate-200 justify-between items-center lg:hidden">
+        <div>
+          <p className="pr-20 py-1 pl-2 bg-black rounded-lg text-2xl font-semibold text-yellow-500">
+            Sai Ram Foods
+          </p>
         </div>
-      </ul>
+        <div>
+          <img src={menu} alt="" className="w-6" onClick={handleOpenSideBar} />
+        </div>
+      </div>
+      <div
+        className={`w-4/6 sm:w-2/6 lg:hidden absolute right-0 top-0 h-screen mt-14 bg-slate-400 z-10 ${
+          isOpenSideBar ? "flex " : "hidden"
+        }`}
+      >
+        <div>
+          <div className="m-4">
+            <img
+              src={close}
+              alt=""
+              className="w-6"
+              onClick={handleCloseSideBar}
+            />
+          </div>
+          <div className="flex justify-center items-center w-full border border-white">
+            <ul className="flex flex-col ">
+              <li className=" ">Home</li>
+              <li>Shop</li>
+              <li>Gifts</li>
+              <li>About Us</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className=" hidden  lg:flex lg:justify-between lg:items-center px-5">
+        <div className="w-full max-h-[120px] ">
+          <img src={Logo} alt="" className="max-h-[120px] " />
+        </div>
+        <ul className="flex w-full gap-4 ">
+          <li
+            className={`hover:cursor-pointer`}
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Home
+          </li>
+          <li
+            className={`hover:cursor-pointer`}
+            onClick={() => {
+              navigate("shop");
+            }}
+          >
+            Shop
+          </li>
+          <li
+            className={`hover:cursor-pointer`}
+            onClick={() => {
+              navigate("gifts");
+            }}
+          >
+            Gifts
+          </li>
+          <li
+            className={`hover:cursor-pointer`}
+            onClick={() => {
+              navigate("about");
+            }}
+          >
+            About Us
+          </li>
+          <li
+            className={`hover:cursor-pointer`}
+            onClick={() => {
+              navigate("contactus");
+            }}
+          >
+            Contact Us
+          </li>
+        </ul>
+        <ul className="flex w-full justify-center ">
+          <div className="flex gap-10">
+            <li>
+              <img src={Search} alt="" className="w-5" />
+            </li>
+            <li>
+              <img src={User} alt="" className="w-5" />
+            </li>
+            <li className="flex relative">
+              <img src={Cart} alt="" className="w-5" />
+              <span className="absolute -right-4  ">{orderItems.length}</span>
+            </li>
+          </div>
+        </ul>
+      </div>
     </div>
   );
 }

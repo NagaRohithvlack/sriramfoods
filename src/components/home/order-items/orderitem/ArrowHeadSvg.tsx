@@ -1,6 +1,10 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../../../home/header/header-comp/CartSlice";
 export default function ArrowDownHead() {
+  function handleDeleteItem() {}
   return (
     <svg
+      onClick={handleDeleteItem}
       className={`w-6 h-6 `}
       fill="none"
       stroke="currentColor"
@@ -16,9 +20,15 @@ export default function ArrowDownHead() {
     </svg>
   );
 }
-export function ArrowUpHead() {
+export function ArrowUpHead({ item }: any) {
+  const dispatch = useDispatch();
+  function handleAddItem() {
+    dispatch(addItem(item));
+  }
+
   return (
     <svg
+      onClick={handleAddItem}
       className={`w-6 h-6 transform rotate-180`}
       fill="none"
       stroke="currentColor"

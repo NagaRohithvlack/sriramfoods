@@ -1,6 +1,6 @@
 export default function SquareCardItem({ item }: any) {
   return (
-    <div className="border border-pink-500 relative rounded-lg">
+    <div className=" relative rounded-lg">
       <img src={item.img} alt="" className="rounded-lg h-full" />
       <div className="absolute bottom-1 right-1 left-1 bg-black opacity-80  text-white flex justify-between items-center px-4 py-3 rounded-lg">
         <p className="">{item.amount}</p>
