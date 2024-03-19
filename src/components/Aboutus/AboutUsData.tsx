@@ -2,7 +2,7 @@ import Aboutus1 from "../../assets/images/Aboutus1.jpeg"
 import Aboutus2 from "../../assets/images/Aboutus2.jpeg"
 
 export const AboutUsData = [
-    // <img src={legacyimg} alt="legacyimg" />
+    
     {
         img: Aboutus1,
         title: "The Legacy Of Sai Ram" ,

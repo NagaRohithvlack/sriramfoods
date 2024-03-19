@@ -2,7 +2,7 @@ import legacyimg from "../../../assets/images/legacyimg.png";
 import lines1 from "../../../assets/images/lines1.png";
 
 export const LegacyData = [
-    // <img src={legacyimg} alt="legacyimg" />
+    
     {
         line: {lines1},
         img: legacyimg,

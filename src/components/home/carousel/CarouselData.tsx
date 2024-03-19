@@ -1,11 +1,11 @@
-import carousela1 from '../../assets/images/carousela1.png';
-import carousela2 from '../../assets/images/carousela2.png';
-import carousela3 from '../../assets/images/carousela3.png';
-import carouselb1 from '../../assets/images/carouselb1.png';
-import carouselb2 from '../../assets/images/carouselb2.png';
-import carouselc1 from '../../assets/images/carouselc1.png';
-import carouseld1 from '../../assets/images/carouseld1.png';
-import lines1 from '../../assets/images/lines1.png';
+import carousela1 from '../../../assets/images/carousela1.png';
+import carousela2 from '../../../assets/images/carousela2.png';
+import carousela3 from '../../../assets/images/carousela3.png';
+import carouselb1 from '../../../assets/images/carouselb1.png';
+import carouselb2 from '../../../assets/images/carouselb2.png';
+import carouselc1 from '../../../assets/images/carouselc1.png';
+import carouseld1 from '../../../assets/images/carouseld1.png';
+import lines1 from '../../../assets/images/lines1.png';
 
 
 export const CarouselData = [
@@ -14,9 +14,9 @@ export const CarouselData = [
       label: "ALL TIME FAVOURITE",
       title: "Where Tradition Meets Passion In Every Bite",
       imgs: [
-        { id: 1, img: carousela1 },
+        { id: 1, img: carousela3 },
         { id: 2, img: carousela2 },
-        { id: 3, img: carousela3 },
+        { id: 3, img: carousela1 },
       ],
     },
     {
@@ -24,8 +24,8 @@ export const CarouselData = [
       label: "ALL TIME FAVOURITE",
       title: "Desserts are not just treats; They are edible works of art.",
       imgs: [
-        { id: 1, img: carouselb1 },
-        { id: 2, img: carouselb2 },
+        { id: 1, img: carouselb2 },
+        { id: 2, img: carouselb1 },
       ],
     },
     {

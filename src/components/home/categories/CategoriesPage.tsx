@@ -3,7 +3,7 @@ import lines1 from "../../../assets/images/lines1.png"
 
 function CategoriesPage () {
     return (
-        <div className=" md:p-24 flex flex-col gap-8">
+        <div className=" md:p-24 flex flex-col md: gap-8">
 
            <div className="flex flex-col justidy-center items-center">
             <img src={lines1} className="md:w-[150px]"/>
@@ -11,7 +11,7 @@ function CategoriesPage () {
 
            </div>
 
-           <div className="flex flex-col justify-center md:flex-row justify-center gap-4 h-[382px]">
+           <div className="flex flex-col justify-center md:flex-row justify-center gap-4 rounded-full w-[382px] md:h-[382px]">
             {CategoriesData.map((item) => {
                 return (
                     <div key={item.id} className="md:w-1/6 md:gap-4 flex flex-col justify-center items-center" style={{ backgroundColor: item.color, borderRadius: '130px 10px 10px 10px' }} > 
