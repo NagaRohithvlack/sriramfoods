@@ -3,27 +3,31 @@ import Rasamali from "../../../../assets/images/rasamalai.jpg";
 import GulabJamun from "../../../../assets/images/gulab-jamun.jpg";
 export const HomeSquareCardData = [
   {
+    id:1,
     img: Laddu,
-    alt: "laddu",
-    amount: "499",
+    itemTitle: "laddu",
+    itemOfferAmount: "499",
     btntext: "Add To Cart",
   },
   {
+    id:2,
     img: Rasamali,
-    alt: "rasamalai",
-    amount: "459",
+    itemTitle: "rasamalai",
+    itemOfferAmount: "459",
     btntext: "Add To Cart",
   },
   {
+    id:3,
     img: GulabJamun,
-    alt: "gulab-jamun",
-    amount: "479",
+    itemTitle: "gulab-jamun",
+    itemOfferAmount: "479",
     btntext: "Add To Cart",
   },
   {
+    id:4,
     img: Rasamali,
-    alt: "rasamalai",
-    amount: "459",
+    itemTitle: "rasamalai",
+    itemOfferAmount: "459",
     btntext: "Add To Cart",
   },
 ];
