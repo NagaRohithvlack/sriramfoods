@@ -1,7 +1,9 @@
 import { useDispatch } from "react-redux";
 import { addItem } from "../../header/header-comp/cart/CartSlice";
-export default function ArrowDownHead() {
-  function handleDeleteItem() {}
+export default function ArrowDownHead({item,quantity,setQuantity}) {
+  function handleDeleteItem() {
+    setQuantity(quantity-1)
+  }
   return (
     <svg
       onClick={handleDeleteItem}
@@ -20,10 +22,13 @@ export default function ArrowDownHead() {
     </svg>
   );
 }
-export function ArrowUpHead({ item }: any) {
+export function ArrowUpHead({ item, quantity,setQuantity }: any) {
   const dispatch = useDispatch();
+  
   function handleAddItem() {
     dispatch(addItem(item));
+    setQuantity(quantity + 1)
+
   }
 
   return (

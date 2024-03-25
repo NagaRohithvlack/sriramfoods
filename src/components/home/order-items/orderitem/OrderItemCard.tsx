@@ -1,5 +1,5 @@
-import ArrowDownHead from "./ArrowHeadSvg";
-import { ArrowUpHead } from "./ArrowHeadSvg";
+
+import QuantitySelector from "./QuantitySelector";
 export default function OrderItemCard({ item }) {
   return (
     <div className="flex flex-col items-center justify-center md:flex-row mb-8">
@@ -42,15 +42,7 @@ export default function OrderItemCard({ item }) {
           </div>
           <div className="flex flex-col gap-4 ">
             <p>{item.quantityDescription}</p>
-            <div className="flex gap-3 justify-start  items-center bg-[#FAFAFA] w-fit rounded-sm">
-              <span className="p-3">
-                <ArrowUpHead item={item} />
-              </span>
-              <span>{item.quantity}</span>
-              <span className="p-3">
-                <ArrowDownHead />
-              </span>
-            </div>
+            <QuantitySelector item={item} />
           </div>
           <div className="flex flex-col gap-4 ">
             <div className="flex gap-4  w-fit">

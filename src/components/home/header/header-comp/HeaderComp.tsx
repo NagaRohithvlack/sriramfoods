@@ -11,7 +11,7 @@ export default function HeaderComp() {
   const [isOpenSideBar, setIsOpenSideBar] = useState(false);
   const navigate = useNavigate();
   const orderItems = useSelector((store) => {
-    console.log(store.cart.items);
+    // console.log(store.cart.items);
     return store.cart.items;
   });
   function handleOpenSideBar() {
@@ -37,9 +37,7 @@ export default function HeaderComp() {
           isOpenSideBar ? "flex " : "hidden"
         }`}
       >
-        <div
-          className={`w-full flex flex-col gap-6 `}
-        >
+        <div className={`w-full flex flex-col gap-6 `}>
           <div className="p-5">
             <img
               src={close}
@@ -59,11 +57,11 @@ export default function HeaderComp() {
           </div>
         </div>
       </div>
-      <div className=" hidden  lg:flex lg:justify-between lg:items-center px-5">
-        <div className="w-full max-h-[120px] ">
+      <div className=" hidden  lg:flex lg:justify-around lg:items-center px-5 ">
+        <div className=" max-h-[120px] w-1/6 ">
           <img src={Logo} alt="" className="max-h-[120px] " />
         </div>
-        <ul className="flex w-full gap-4 ">
+        <ul className="flex  justify-end gap-6 w-3/6 ">
           <li
             className={`hover:cursor-pointer`}
             onClick={() => {
@@ -72,14 +70,7 @@ export default function HeaderComp() {
           >
             Home
           </li>
-          <li
-            className={`hover:cursor-pointer`}
-            onClick={() => {
-              navigate("shop");
-            }}
-          >
-            Shop
-          </li>
+
           <li
             className={`hover:cursor-pointer`}
             onClick={() => {
@@ -104,9 +95,17 @@ export default function HeaderComp() {
           >
             Contact Us
           </li>
+          <li
+            className={`hover:cursor-pointer`}
+            onClick={() => {
+              navigate("shop");
+            }}
+          >
+            OrderNow
+          </li>
         </ul>
-        <ul className="flex w-full justify-center ">
-          <div className="flex gap-10">
+        <ul className="flex  justify-center w-2/6 ">
+          <div className="flex gap-8">
             <li>
               <img src={Search} alt="" className="w-5" />
             </li>
@@ -114,7 +113,14 @@ export default function HeaderComp() {
               <img src={User} alt="" className="w-5" />
             </li>
             <li className="flex relative">
-              <img src={Cart} alt="" className="w-5" onClick={()=>{navigate('cart')}}/>
+              <img
+                src={Cart}
+                alt=""
+                className="w-5"
+                onClick={() => {
+                  navigate("cart");
+                }}
+              />
               <span className="absolute -right-4  ">{orderItems.length}</span>
             </li>
           </div>
