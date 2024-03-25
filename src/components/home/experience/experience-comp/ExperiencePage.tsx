@@ -3,6 +3,7 @@ import firstImg from "../../../../assets/images/first-1.png";
 import FallingDotsComponent from "./SingleDot";
 import { MovingDotsRightComp } from "./SingleDot";
 import curleyDesign from "../../../../assets/images/curely-design.png";
+
 export default function ExperienceSairam() {
   return (
     <div className="flex flex-col h-screen justify-center items-center relative  sm:flex-row">

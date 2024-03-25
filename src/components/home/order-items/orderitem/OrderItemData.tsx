@@ -1,11 +1,14 @@
-import KajuKatli from '../../../../assets/images/kaju-katli.jpg'
+import KajuKatli from "../../../../assets/images/kaju-katli.jpg";
+// import gulab from "../../../../assets/images/gulab-jamun.jpg";
+
 export const OrderItemData = [
   {
+    id: 1,
     img: KajuKatli,
     itemTitle: "Kaju Katli",
     itemOfferAmount: "360",
-        itemOriginalAmount: "450",
-    offer:"13%",
+    itemOriginalAmount: "450",
+    offer: "13%",
     itemMrpDescription: "(MRP inclusive of all taxes)",
     starReviews: "reviews",
     size: "Size",
@@ -15,4 +18,20 @@ export const OrderItemData = [
     quantity: "0",
     usageNote: "Best Before 30-days after packing",
   },
+  // {
+  //   id: 2,
+  //   img: gulab,
+  //   itemTitle: "Gulab Jamun",
+  //   itemOfferAmount: "360",
+  //   itemOriginalAmount: "450",
+  //   offer: "13%",
+  //   itemMrpDescription: "(MRP inclusive of all taxes)",
+  //   starReviews: "reviews",
+  //   size: "Size",
+  //   grams1: "250gm",
+  //   grams2: "500gm",
+  //   quantityDescription: "Quantity",
+  //   quantity: "0",
+  //   usageNote: "Best Before 30-days after packing",
+  // },
 ];

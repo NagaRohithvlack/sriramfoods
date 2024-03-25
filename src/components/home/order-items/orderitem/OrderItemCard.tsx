@@ -1,8 +1,8 @@
 import ArrowDownHead from "./ArrowHeadSvg";
 import { ArrowUpHead } from "./ArrowHeadSvg";
-export default function OrderItemCard({ item }: any) {
+export default function OrderItemCard({ item }) {
   return (
-    <div className="flex flex-col items-center justify-center md:flex-row ">
+    <div className="flex flex-col items-center justify-center md:flex-row mb-8">
       <div className="w-full   ">
         <img src={item.img} alt="" />
       </div>
@@ -12,9 +12,9 @@ export default function OrderItemCard({ item }: any) {
             <div className="flex flex-col gap-1 ">
               <h1 className="mb-2">{item.itemTitle}</h1>
               <p className="pl-1">
-                {item.itemOfferAmount}
+                &#8377; {item.itemOfferAmount}
                 <span className="pl-8 line-through">
-                  {item.itemOriginalAmount}
+                  &#8377;{item.itemOriginalAmount}
                 </span>
               </p>
               <p className="text-sm">{item.itemMrpDescription}</p>
@@ -44,7 +44,7 @@ export default function OrderItemCard({ item }: any) {
             <p>{item.quantityDescription}</p>
             <div className="flex gap-3 justify-start  items-center bg-[#FAFAFA] w-fit rounded-sm">
               <span className="p-3">
-                <ArrowUpHead />
+                <ArrowUpHead item={item} />
               </span>
               <span>{item.quantity}</span>
               <span className="p-3">

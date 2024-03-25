@@ -3,7 +3,7 @@ import { HomeSquareCardData } from "./SquareCardData";
 import SquareCardItem from "./SquareCardItem";
 export default function SquareCard() {
   return (
-    <div className="flex flex-col gap-20">
+    <div className="flex flex-col gap-20 ">
       <div className="flex flex-col items-center">
         <img src={curelyDesignArrow} alt="designed-arrow" className="w-2/6" />
         <h1 className="text-2xl">New Arrivals</h1>

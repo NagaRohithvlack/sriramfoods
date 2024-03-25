@@ -1,10 +1,10 @@
 import borderimg from "../../../assets/images/borderimg.png";
 
-function BorderLine() {
+export default function BorderLineDown() {
   return (
-    <div className="flex">
+    <div className="flex  overflow-hidden">
       <div className="flex md:w-[65px] ">
-        {Array(19)
+        {Array(140)
           .fill(0)
           .map((index: number) => {
             return (
@@ -12,7 +12,7 @@ function BorderLine() {
                 key={index}
                 src={borderimg}
                 alt=""
-                className="w-full rotate-90"
+                className=" rotate-90 w-[30px] md:w-[40px] lg:w-[50px]"
               />
             );
           })}
@@ -21,4 +21,23 @@ function BorderLine() {
   );
 }
 
-export default BorderLine;
+export function BorderLineUp() {
+  return (
+    <div className="flex overflow-hidden">
+      <div className="flex md:w-[65px] ">
+        {Array(40)
+          .fill(0)
+          .map((index: number) => {
+            return (
+              <img
+                key={index}
+                src={borderimg}
+                alt=""
+                className=" -rotate-90 w-[30px] md:w-[40px] lg:w-[50px]"
+              />
+            );
+          })}
+      </div>
+    </div>
+  );
+}
