@@ -7,7 +7,9 @@ import SquareCard from "./square-card/SquareCard.tsx";
 function Specials() {
   return (
     <div>
-      <SpecialPageBanner />
+      <div className="pt-8 md:pt-14 lg:pt-24">
+        <SpecialPageBanner />
+      </div>
       <CategoriesPage />
       <OrderItems />
       <SquareCard />
