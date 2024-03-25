@@ -1,5 +1,4 @@
 
-import { motion, AnimatePresence } from "framer-motion";
 import { CarouselData } from "./CarouselData";
 import { useState, useEffect } from "react";
 
@@ -24,40 +23,39 @@ function CarouselMap() {
 
   return (
     <div>
-    <div className="flex md:flex-row justify-center h-screen bg-[url('D:\sairamfoods2\sriramfoods\src\assets\images\bgimg.png')] ">
-      
-      <button onClick={prevPage} className=""> <Leftdouble /> </button>
-      <div className="flex-col md:flex-row justify-between items-center w-screen ">
-        <div className="flex flex-col gap-4 text-left w-4/6">
-          <div className="w-[246px] ">
-            <img src={CarouselData[currentIndex].line} />
-            <h2 className="w-[246px] flex justify-center text-lg">
-              {CarouselData[currentIndex].label}
-            </h2>
+      <div className="flex md:flex-row justify-center h-screen bg-[url('D:\sairamfoods2\sriramfoods\src\assets\images\bgimg.png')] ">
+        <button onClick={prevPage} className=""> <Leftdouble /> </button>
+        <div className="flex flex-col md:flex-row justify-between items-center w-screen ">
+          <div className="flex flex-col gap-4 text-left w-4/6">
+            <div className="w-[246px] ">
+              <img src={CarouselData[currentIndex].line} />
+              <h2 className="w-[246px] flex justify-center text-lg">
+                {CarouselData[currentIndex].label}
+              </h2>
+            </div>
+            <h1 className="text-5xl">
+              {CarouselData[currentIndex].title}
+            </h1>
+            <button type="submit" className="border border-slate-900 w-[130px] text-lg rounded-full p-2">Shop Now</button>
           </div>
-          <h1 className="text-5xl">
-            {CarouselData[currentIndex].title}
-          </h1>
-          <button type="submit" className="border border-slate-900 w-[130px] text-lg rounded-full p-2">Shop Now</button>
+          <div className="flex flex-col md:flex md:flex-row items-center justify-center md:h-screen relative w-3/6 ">
+            <div className="flex"> {/* Parent flex container */}
+              {CarouselData[currentIndex].imgs.map((image, index) => (
+                <img
+                  key={image.id}
+                  src={image.img}
+                  className={`w-64 h-auto mb-4 ${
+                    index === 0 ? 'mr-4 md:w-[1056px]' : 
+                    index === 1 ? 'mr-4 md:w-[230px]' : 
+                    'mr-4'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col items-center justify-center md:h-screen relative w-3/6 ">
-          {CarouselData[currentIndex].imgs.map((image, index) => (
-            <img
-              key={image.id}
-              src={image.img}
-              className={`w-64 h-auto mb-4 absolute ${
-                index === 0 ? 'right-0 bottom-0 md:w-[1056px]' : 
-                index === 1 ? 'left-0 md:w-[230px]' : 
-                'left-1/2 transform -translate-x-1/2'
-              }`}
-            />
-          ))}
-          
-        </div>
+        <button onClick={nextPage} className=""> <Rightdouble /> </button>
       </div>
-      <button onClick={nextPage} className=""> <Rightdouble /> </button>
-      
-    </div>
 
     <div className="flex mt-4 justify-center items-center">
             {CarouselData.map((_, index) => (

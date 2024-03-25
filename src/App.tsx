@@ -6,10 +6,6 @@ import ContactUsPage from "./components/contactus/ContactUsPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/home/header/Header.tsx";
 import Footer from "./components/home/footer/Footer.tsx";
-import { Provider } from "react-redux";
-import store from "./store.tsx";
-import RenewPromise from "./components/gifts/RenewPromise.tsx";
-import Cart from "./components/home/header/header-comp/cart/Cart.tsx";
 
 function App() {
   return (

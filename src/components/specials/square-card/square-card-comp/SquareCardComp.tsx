@@ -4,6 +4,7 @@ import SquareCardItem from "./SquareCardItem";
 import { Leftdouble } from "../../../../assets/svgs/Leftdouble";
 import { Rightdouble } from "../../../../assets/svgs/Rightdouble";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 
@@ -32,11 +33,20 @@ export default function SquareCard() {
       </div>
       <div className="flex">
       <button onClick={prevpage}> <Leftdouble /> </button>
-      <ul className="flex w-full overflow-hidden gap-6">
-        {visibleItems.map((item, index) => {
-          return <SquareCardItem item={item} key={index} />;
-        })}
-      </ul>
+      <ul className="flex w-full overflow-hidden gap-4" key={currentIndex}>
+          {visibleItems.map((item, index) => (
+            <AnimatePresence key={index}>
+              <motion.li
+                initial={{ opacity: 1, x: '100%' }}
+                animate={{ opacity: 1, x: '0%' }}
+                exit={{ opacity: 1, x:'0%' }}
+                transition={{ duration: 1.5, ease: 'easeInOut' }}
+              >
+                <SquareCardItem item={item} />
+              </motion.li>
+            </AnimatePresence>
+          ))}
+        </ul>
       <button onClick={nextPage}> <Rightdouble /> </button>
       </div>
     </div>
