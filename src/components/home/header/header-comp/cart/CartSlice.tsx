@@ -7,10 +7,22 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      state.items.push(action.payload);
+      const existingItemIndex = state.items.findIndex((item) => {
+        return item.itemTitle === action.payload.itemTitle;
+      });
+
+      if (existingItemIndex === -1) {
+        state.items.push({ ...action.payload, quantity: 1 });
+      } else {
+        const existingItem = state.items[existingItemIndex];
+        existingItem.quantity++;
+        
+      }
     },
     deleteItem: (state, action) => {
-      state.items.pop(action.payload);
+      state.items = state.items.filter(
+        (item) => item.itemTitle !== action.payload.itemTitle
+      );
     },
     emptyingCart: (state) => {
       state.items = [];
@@ -18,5 +30,5 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addItem, emptyingCart } = cartSlice.actions;
+export const { addItem, deleteItem, emptyingCart } = cartSlice.actions;
 export default cartSlice.reducer;
