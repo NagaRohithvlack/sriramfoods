@@ -1,13 +1,14 @@
-import KajuKatli from '../../../../assets/images/kaju-katli.jpg'
-import Rasamali from "../../../../assets/images/rasamalai.jpg";
+import KajuKatli from "../../../../assets/images/kaju-katli.jpg";
+// import gulab from "../../../../assets/images/gulab-jamun.jpg";
+
 export const OrderItemData = [
   {
-    id:1,
+    id: 1,
     img: KajuKatli,
     itemTitle: "Kaju Katli",
     itemOfferAmount: "360",
-        itemOriginalAmount: "450",
-    offer:"13%",
+    itemOriginalAmount: "450",
+    offer: "13%",
     itemMrpDescription: "(MRP inclusive of all taxes)",
     starReviews: "reviews",
     size: "Size",
@@ -18,12 +19,12 @@ export const OrderItemData = [
     usageNote: "Best Before 30-days after packing",
   },
   // {
-  //   id:2,
-  //   img: Rasamali,
-  //   itemTitle: "Rasa Malai",
-  //   itemOfferAmount: "300",
-  //       itemOriginalAmount: "499",
-  //   offer:"40%",
+  //   id: 2,
+  //   img: gulab,
+  //   itemTitle: "Gulab Jamun",
+  //   itemOfferAmount: "360",
+  //   itemOriginalAmount: "450",
+  //   offer: "13%",
   //   itemMrpDescription: "(MRP inclusive of all taxes)",
   //   starReviews: "reviews",
   //   size: "Size",

@@ -21,7 +21,7 @@ function CategoriesPage() {
               }}
             >
               <div
-                className="border-4   w-6/6  rounded-full"
+                className="border-4 w-6/6 rounded-full"
                 style={{ borderColor: item.bgcolor }}
               >
                 <img

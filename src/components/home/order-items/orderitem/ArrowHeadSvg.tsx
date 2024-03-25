@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addItem } from "../../../home/header/header-comp/CartSlice";
+import { addItem } from "../../header/header-comp/cart/CartSlice";
 export default function ArrowDownHead() {
   function handleDeleteItem() {}
   return (

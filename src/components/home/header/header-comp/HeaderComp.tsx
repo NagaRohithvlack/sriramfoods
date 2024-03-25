@@ -22,7 +22,7 @@ export default function HeaderComp() {
   }
   return (
     <div className="relative">
-      <div className="flex py-2 px-4 shadow-md bg-slate-200 justify-between items-center lg:hidden">
+      <div className="flex py-2 px-4 shadow-md bg-slate-100 justify-between items-center lg:hidden">
         <div>
           <p className="pr-20 py-1 pl-2 bg-black rounded-lg text-2xl font-semibold text-yellow-500">
             Sai Ram Foods
@@ -33,12 +33,14 @@ export default function HeaderComp() {
         </div>
       </div>
       <div
-        className={`w-4/6 sm:w-2/6 lg:hidden absolute right-0 top-0 h-screen mt-14 bg-slate-400 z-10 ${
+        className={`w-4/6 sm:w-2/6 lg:hidden absolute right-0 top-0 h-screen mt-14 bg-slate-100 z-10 ${
           isOpenSideBar ? "flex " : "hidden"
         }`}
       >
-        <div>
-          <div className="m-4">
+        <div
+          className={`w-full flex flex-col gap-6 `}
+        >
+          <div className="p-5">
             <img
               src={close}
               alt=""
@@ -46,13 +48,13 @@ export default function HeaderComp() {
               onClick={handleCloseSideBar}
             />
           </div>
-          <div className="flex justify-center items-center w-full border border-white">
-            <ul className="flex flex-col ">
-              <li className=" ">Home</li>
-              <li>Shop</li>
-              <li>Gifts</li>
-              <li>About Us</li>
-              <li>Contact Us</li>
+          <div className="flex justify-center items-center w-full  ">
+            <ul className="flex flex-col w-full gap-2 ">
+              <li className="hover:bg-white p-2 rounded-lg">Home</li>
+              <li className="hover:bg-white p-2">Shop</li>
+              <li className="hover:bg-white p-2">Gifts</li>
+              <li className="hover:bg-white p-2">About Us</li>
+              <li className="hover:bg-white p-2">Contact Us</li>
             </ul>
           </div>
         </div>
@@ -112,7 +114,7 @@ export default function HeaderComp() {
               <img src={User} alt="" className="w-5" />
             </li>
             <li className="flex relative">
-              <img src={Cart} alt="" className="w-5" />
+              <img src={Cart} alt="" className="w-5" onClick={()=>{navigate('cart')}}/>
               <span className="absolute -right-4  ">{orderItems.length}</span>
             </li>
           </div>
