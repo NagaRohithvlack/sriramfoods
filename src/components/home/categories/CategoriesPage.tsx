@@ -1,6 +1,5 @@
 import { CategoriesData } from "./CategoriesData";
 import lines1 from "../../../assets/images/lines1.png";
-
 function CategoriesPage() {
   return (
     <div className="p-6 md:p-24 flex flex-col gap-8 ">

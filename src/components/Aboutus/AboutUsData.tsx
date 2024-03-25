@@ -2,6 +2,7 @@ import Aboutus1 from "../../assets/images/Aboutus1.jpeg"
 import Aboutus2 from "../../assets/images/Aboutus2.jpeg"
 
 export const AboutUsData = [
+
     {
         img: Aboutus1,
         title: "The Legacy Of Sai Ram" ,

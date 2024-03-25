@@ -1,6 +1,8 @@
 import SpecialPageBanner from "../specials/specialspage/SpecialPagebanner";
 import CategoriesPage from "../home/categories/CategoriesPage";
 import OrderItems from "../home/order-items/OrderItems.tsx";
+import SquareCard from "./square-card/SquareCard.tsx";
+
 
 function Specials() {
   return (
@@ -10,6 +12,8 @@ function Specials() {
       </div>
       <CategoriesPage />
       <OrderItems />
+      <SquareCard />
+      
     </div>
   );
 }
