@@ -1,8 +1,10 @@
 import lines1 from "../../assets/images/lines1.png"
+import PaymentPage from "../Payments/PaymentPage";
 import { AboutUsData } from "./AboutUsData";
 
 function AboutUsPage () {
     return (
+        <>
         <div className="flex flex-col justify-center items-center md:gap-12 h-screen md:flex md:flex-row bg-[#FFF6F1]">
             
             <div className="md:w-3/6  md:flex-row flex  relative  md:h-5/6 ">
@@ -42,6 +44,8 @@ function AboutUsPage () {
                 
             </div>
         </div>
+        <PaymentPage />
+        </>
     )
 }
 

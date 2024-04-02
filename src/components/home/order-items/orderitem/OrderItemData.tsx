@@ -3,8 +3,8 @@ export const OrderItemData = [
   {
     img: KajuKatli,
     itemTitle: "Kaju Katli",
-    itemOfferAmount: "360",
-        itemOriginalAmount: "450",
+    itemOfferAmount: 360,
+    itemOriginalAmount: 450,
     offer:"13%",
     itemMrpDescription: "(MRP inclusive of all taxes)",
     starReviews: "reviews",
@@ -12,7 +12,7 @@ export const OrderItemData = [
     grams1: "250gm",
     grams2: "500gm",
     quantityDescription: "Quantity",
-    quantity: "0",
+    quantity: 0,
     usageNote: "Best Before 30-days after packing",
   },
 ];

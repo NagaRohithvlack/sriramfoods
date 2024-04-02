@@ -1,6 +1,8 @@
 import ArrowDownHead from "./ArrowHeadSvg";
 import { ArrowUpHead } from "./ArrowHeadSvg";
-export default function OrderItemCard({ item }: any) {
+import { OrderPropType } from "../../../../utils/types/types";
+
+export default function OrderItemCard({ item }: OrderPropType) {
   return (
     <div className="flex flex-col items-center justify-center md:flex-row ">
       <div className="w-full   ">
