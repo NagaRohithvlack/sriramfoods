@@ -6,7 +6,7 @@ export default function BorderLineDown() {
       <div className="flex md:w-[65px] ">
         {Array(140)
           .fill(0)
-          .map((index: number) => {
+          .map((_, index: number) => {
             return (
               <img
                 key={index}
@@ -27,7 +27,7 @@ export function BorderLineUp() {
       <div className="flex md:w-[65px] ">
         {Array(40)
           .fill(0)
-          .map((index: number) => {
+          .map((_, index: number) => {
             return (
               <img
                 key={index}
