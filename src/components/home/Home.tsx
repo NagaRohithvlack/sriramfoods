@@ -14,7 +14,7 @@ export default function Home() {
       <Crousal />
       <ExperienceSairam />
       <div className={`p-5`}>
-        <SquareCard />
+      <SquareCard />
       </div>
       <GiftBox />
       <LegacyPage />

@@ -25,7 +25,7 @@ export default function SquareCard() {
   const visibleItems = HomeSquareCardData.slice(currentIndex, currentIndex + 4);
 
   return (
-    <div className="flex flex-col gap-20 bg-slate-200 ">
+    <div className="flex flex-col gap-20 ">
       
       <div className="flex flex-col items-center">
         <img src={curelyDesignArrow} alt="designed-arrow" className="w-2/6" />
