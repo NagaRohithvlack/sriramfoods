@@ -6,32 +6,32 @@ import jilebi from "../../../../assets/images/jilebi.jpeg"
 export const HomeSquareCardData = [
   {
     img: milkkofta,
-    itemOfferAmount: "100",
+    itemOfferAmount: 100,
     btntext: "Add To Cart",
   },
   {
     img: jilebi,
-    itemOfferAmount: "200",
+    itemOfferAmount: 200,
     btntext: "Add To Cart",
   },
   {
     img: laddu,
-    itemOfferAmount: "300",
+    itemOfferAmount: 300,
     btntext: "Add To Cart",
   },
   {
     img: rasamalai,
-    itemOfferAmount: "400",
+    itemOfferAmount: 400,
     btntext: "Add To Cart",
   },
   {
     img: gulabjamun,
-    itemOfferAmount: "500",
+    itemOfferAmount: 500,
     btntext: "Add To Cart",
   },
   {
     img: rasamalai,
-    itemOfferAmount: "600",
+    itemOfferAmount: 600,
     btntext: "Add To Cart",
   },
 ];

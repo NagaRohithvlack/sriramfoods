@@ -4,6 +4,8 @@ import NothingInCart from "./NothingInCart";
 import quanntityIncrement from "../../../../../assets/images/quantity-increment.png";
 import quantityDecrement from "../../../../../assets/images/quantity-decrement.png";
 import Delete from "../../../../../assets/images/delete.png";
+import axios from "axios";
+
 import {
   deleteItem,
   emptyingCart,
@@ -17,6 +19,18 @@ export default function CartAddedItems() {
   const [checkedItems, setCheckedItems] = useState([]);
   const addedCartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
+
+  const onSubmit = async () => {
+    try {
+      const TotalBillAmount = totalAmount + deliveryCharge
+      const response = await axios.post("https://jsonplaceholder.typicode.com/posts", {checkedItems, totalAmount, totalQuantity, deliveryCharge, TotalBillAmount});
+      console.log("Data submitted successfully:", response.data);
+      setCheckedItems([]);
+    } 
+    catch (error) {
+      console.error("Error submitting data:", error);
+    }
+  };
 
   useEffect(() => {
     const amount = checkedItems.reduce((total, item) => {
@@ -66,6 +80,7 @@ export default function CartAddedItems() {
     dispatch(emptyingCart());
   }
   if (addedCartItems.length === 0) return <NothingInCart />;
+  console.log(checkedItems);
   return (
     <div className="flex flex-col gap-8 w-full font-medium">
       <div className="flex justify-between py-6 mx-6 border-b border-b-slate-500">
@@ -225,12 +240,12 @@ export default function CartAddedItems() {
                   <p>&#8377; {totalAmount + deliveryCharge}</p>
                 </div>
                 <p>Total Item's : {totalQuantity}</p>
-                <div className="flex justify-between w-5/6 mx-auto p-2 rounded-lg border border-slate-900 bg-[#FCA120]">
+                <button type="submit" onClick={onSubmit} className="flex justify-between w-5/6 mx-auto p-2 rounded-lg border border-slate-900 bg-[#FCA120]">
                   <p>&#8377;{totalAmount + deliveryCharge}</p>
                   <p>
                     <a href="">Proceed to Buy &rarr;</a>{" "}
                   </p>
-                </div>
+                </button>
               </div>
             </div>
           </div>

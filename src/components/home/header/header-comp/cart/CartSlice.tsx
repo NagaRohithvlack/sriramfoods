@@ -1,22 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { CartItem, CartState } from "../../../../../utils/types/Types";
 
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    items: [],
-  },
+    items: [] as CartItem[],
+  } as CartState,
   reducers: {
     addItem: (state, action) => {
+      const { itemOfferAmount, quantity } = action.payload;
       const existingItemIndex = state.items.findIndex((item) => {
         return item.itemTitle === action.payload.itemTitle;
       });
-
       if (existingItemIndex === -1) {
-        state.items.push({ ...action.payload, quantity: 1 });
+        const amount = itemOfferAmount * quantity;
+        state.items.push({ ...action.payload, quantity: 1, amount: amount });
+      console.log(state.items, action.payload)
+        
       } else {
         const existingItem = state.items[existingItemIndex];
         existingItem.quantity++;
-      }
+        existingItem.amount = existingItem.itemOfferAmount * existingItem.quantity;
+      }      
     },
     deleteItem: (state, action) => {
       state.items = state.items.filter(

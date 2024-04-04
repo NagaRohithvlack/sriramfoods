@@ -28,7 +28,7 @@ export const SqCardSchema = z.object({
     id:z.optional(z.number()),
     img: z.string(),
     itemTitle: z.optional(z.string()),
-    itemOfferAmount: z.string(),
+    itemOfferAmount: z.number(),
     btntext: z.string(),
     
 })
@@ -72,3 +72,14 @@ export const OrderCardPropSchema = z.object({
     itemO: OrderCardSchema
 })
 export type OrderCardPropType = z.infer<typeof OrderCardPropSchema>
+
+export interface CartItem {
+    itemTitle: string;
+    itemOfferAmount: number;
+    quantity: number;
+    amount?: number;
+  }
+  
+  export interface CartState {
+    items: CartItem[];
+  }
