@@ -13,61 +13,73 @@ import sweet12 from "../../../assets/images/sweet12.jpeg"
 
 export const SweetData = [
     {
+        itemTitle: "sweet1",
         img: sweet1,
         price: "350",
         btntext: "Add To Cart"
     },
     {
+        itemTitle: "sweet2",
         img: sweet2,
         price: "350",
         btntext: "Add To Cart"
     },
     {
+        itemTitle: "sweet3",
         img: sweet3,
         price: "350",
         btntext: "Add To Cart"
     },
     {
+        itemTitle: "sweet4",
         img: sweet4,
         price: "350",
         btntext: "Add To Cart"
     },
     {
+        itemTitle: "sweet5",
         img: sweet5,
         price: "350",
         btntext: "Add To Cart"
     },
     {
+        itemTitle: "sweet6",
         img: sweet6,
         price: "350",
         btntext: "Add To Cart"
     },
     {
+        itemTitle: "sweet7",
         img: sweet7,
         price: "350",
         btntext: "Add To Cart"
     },
     {
+        itemTitle: "sweet8",
         img: sweet8,
         price: "350",
         btntext: "Add To Cart"
     },
     {
+        itemTitle: "sweet9",
         img: sweet9,
         price: "350",
         btntext: "Add To Cart"
     },
     {
+        itemTitle: "sweet10",
         img: sweet10,
         price: "350",
         btntext: "Add To Cart"
     },
     {
+        itemTitle: "sweet11",
         img: sweet11,
         price: "350",
         btntext: "Add To Cart"
     },
     {
+        itemTitle: "sweet12",
         img: sweet12,
         price: "350",
         btntext: "Add To Cart"

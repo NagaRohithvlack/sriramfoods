@@ -1,6 +1,9 @@
 import { useDispatch } from "react-redux";
 import { addItem } from "../../header/header-comp/cart/CartSlice";
-export default function ArrowDownHead({item,quantity,setQuantity}) {
+import { ArrowPropType } from "../../../../utils/types/Types";
+
+
+export default function ArrowDownHead({ quantity,setQuantity}: ArrowPropType) {
   function handleDeleteItem() {
     setQuantity(quantity-1)
   }
@@ -22,7 +25,7 @@ export default function ArrowDownHead({item,quantity,setQuantity}) {
     </svg>
   );
 }
-export function ArrowUpHead({ item, quantity,setQuantity }: any) {
+export function ArrowUpHead({ item, quantity,setQuantity }: ArrowPropType) {
   const dispatch = useDispatch();
   
   function handleAddItem() {

@@ -1,5 +1,3 @@
-
-import OrderNowPage from "../../ordernow/OrderNowPage";
 import GiftBoxPage from "./giftbox-comp/GiftBoxPage";
 
 export default function GiftBox() {
@@ -7,7 +5,7 @@ export default function GiftBox() {
     <div >
 
       <GiftBoxPage />
-      <OrderNowPage />
+      
       
     </div>
   );

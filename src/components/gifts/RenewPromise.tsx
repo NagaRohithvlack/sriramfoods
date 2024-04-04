@@ -1,5 +1,4 @@
 import BorderLine, { BorderLineUp } from "../home/shop/BorderLine";
-import DeliciousCombo from "./renew-promise/DeliciousCombo";
 
 import RenewPromiseComponent from "./renew-promise/RenewPromiseComponent";
 
@@ -9,7 +8,6 @@ export default function RenewPromise() {
       <BorderLineUp />
       <RenewPromiseComponent />
       <BorderLine />
-      <DeliciousCombo />
     </div>
   );
 }

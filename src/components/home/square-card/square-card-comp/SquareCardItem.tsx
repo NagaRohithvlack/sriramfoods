@@ -1,8 +1,9 @@
 import { useDispatch } from "react-redux";
 import { addItem } from "../../header/header-comp/cart/CartSlice";
-// import { useNavigate } from "react-router-dom";
-export default function SquareCardItem({ item }: any) {
-  // const navigate = useNavigate();
+import { SqCardPropType } from "../../../../utils/types/Types";
+
+export default function SquareCardItem({ item }: SqCardPropType) {
+
   const dispatch = useDispatch();
   function handleAddCartItem() {
     dispatch(addItem(item));

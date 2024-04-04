@@ -1,7 +1,8 @@
 import ArrowDownHead from "./ArrowHeadSvg";
 import { ArrowUpHead } from "./ArrowHeadSvg";
 import { useState } from "react";
-export default function QuantitySelector({ item }) {
+import { ArrowPropType } from "../../../../utils/types/Types";
+export default function QuantitySelector({ item, }: ArrowPropType) {
   const [quantity, setQuantity] = useState(0);
   return (
     <div className="flex gap-3 justify-start  items-center bg-[#FAFAFA] w-fit rounded-sm">

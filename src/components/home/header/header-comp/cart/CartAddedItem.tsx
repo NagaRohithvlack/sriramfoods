@@ -4,6 +4,9 @@ import NothingInCart from "./NothingInCart";
 import quanntityIncrement from "../../../../../assets/images/quantity-increment.png";
 import quantityDecrement from "../../../../../assets/images/quantity-decrement.png";
 import Delete from "../../../../../assets/images/delete.png";
+import axios from "axios";
+import { CartItem } from "../../../../../utils/types/Types";
+
 import {
   deleteItem,
   emptyingCart,
@@ -14,19 +17,31 @@ const deliveryCharge = 40;
 export default function CartAddedItems() {
   const [totalAmount, setTotalAmount] = useState(0);
   const [totalQuantity,setTotalQuantity]= useState(0)
-  const [checkedItems, setCheckedItems] = useState([]);
-  const addedCartItems = useSelector((store) => store.cart.items);
+  const [checkedItems, setCheckedItems] = useState<CartItem[]>([]);
+  const addedCartItems = useSelector((store: any) => store.cart.items);
   const dispatch = useDispatch();
 
+  const onSubmit = async () => {
+    try {
+      const TotalBillAmount = totalAmount + deliveryCharge
+      const response = await axios.post("https://jsonplaceholder.typicode.com/posts", {checkedItems, totalAmount, totalQuantity, deliveryCharge, TotalBillAmount});
+      console.log("Data submitted successfully:", response.data);
+     /// setCheckedItems([]);
+    } 
+    catch (error) {
+      console.error("Error submitting data:", error);
+    }
+  };
+
   useEffect(() => {
-    const amount = checkedItems.reduce((total, item) => {
+    const amount = checkedItems.reduce((total, item: CartItem) => {
       return total + Number(item.itemOfferAmount * item.quantity);
     }, 0);
      
     setTotalAmount(amount);
   }, [checkedItems]);
   useEffect(() => {
-    const totalQuantity = checkedItems.reduce((total, item) => {
+    const totalQuantity = checkedItems.reduce((total, item: CartItem) => {
       return total + Number(item.quantity)
     }, 0)
     setTotalQuantity(totalQuantity)
@@ -35,30 +50,30 @@ export default function CartAddedItems() {
     setCheckedItems([...addedCartItems]);
   }, [addedCartItems]);
 
-  function handleCheckedItems(item) {
+  function handleCheckedItems(item: CartItem) {
     const isChecked = checkedItems.some(
-      (checkedItem) => checkedItem.itemTitle === item.itemTitle
+      (checkedItem: CartItem) => checkedItem.itemTitle === item.itemTitle
     );
 
     if (isChecked) {
       const updatedCheckedItems = checkedItems.filter(
-        (checkedItem) => checkedItem.itemTitle !== item.itemTitle
+        (checkedItem: CartItem) => checkedItem.itemTitle !== item.itemTitle
       );
       setCheckedItems(updatedCheckedItems);
     } else {
-      setCheckedItems([...checkedItems, item]);
+      setCheckedItems([...checkedItems , item]);
     }
   }
 
-  function handleQuantityIncrement(item) {
+  function handleQuantityIncrement(item: CartItem) {
     dispatch(updateCartItemQuantity(item));
   }
 
-  function handleQuantityDecrement(item) {
+  function handleQuantityDecrement(item: CartItem) {
     dispatch(decrementingCartItemQuantity(item));
   }
 
-  function handleDeleteCartItem(item) {
+  function handleDeleteCartItem(item: CartItem) {
     dispatch(deleteItem(item));
   }
 
@@ -66,6 +81,7 @@ export default function CartAddedItems() {
     dispatch(emptyingCart());
   }
   if (addedCartItems.length === 0) return <NothingInCart />;
+  console.log(checkedItems);
   return (
     <div className="flex flex-col gap-8 w-full font-medium">
       <div className="flex justify-between py-6 mx-6 border-b border-b-slate-500">
@@ -80,7 +96,7 @@ export default function CartAddedItems() {
       <div className="flex justify-between px-6">
         <div className="flex gap-6 w-full">
           <div className="cartAddedItem flex flex-col gap-6 w-5/6">
-            {addedCartItems.map((item) => (
+            {addedCartItems.map((item: CartItem) => (
               <div
                 key={item.id}
                 className="flex pr-16 pl-4 py-4 border border-slate-200 justify-between items-center rounded-md shadow-md"
@@ -93,7 +109,7 @@ export default function CartAddedItems() {
                         handleCheckedItems(item);
                       }}
                       checked={checkedItems.some(
-                        (checkedItem) =>
+                        (checkedItem: CartItem) =>
                           checkedItem.itemTitle === item.itemTitle
                       )}
                     />
@@ -199,7 +215,7 @@ export default function CartAddedItems() {
                   </tr>
                 </thead>
                 <tbody>
-                  {checkedItems.map((item, index) => (
+                  {checkedItems.map((item: CartItem, index) => (
                     <tr key={index} className="text-left">
                       <td className="px-6 py-2">{index + 1}.</td>
                       <td className="px-6 py-2">{item.itemTitle}</td>
@@ -225,12 +241,12 @@ export default function CartAddedItems() {
                   <p>&#8377; {totalAmount + deliveryCharge}</p>
                 </div>
                 <p>Total Item's : {totalQuantity}</p>
-                <div className="flex justify-between w-5/6 mx-auto p-2 rounded-lg border border-slate-900 bg-[#FCA120]">
+                <button type="submit" onClick={onSubmit} className="flex justify-between w-5/6 mx-auto p-2 rounded-lg border border-slate-900 bg-[#FCA120]">
                   <p>&#8377;{totalAmount + deliveryCharge}</p>
                   <p>
                     <a href="">Proceed to Buy &rarr;</a>{" "}
                   </p>
-                </div>
+                </button>
               </div>
             </div>
           </div>
