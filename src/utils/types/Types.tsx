@@ -78,6 +78,8 @@ export interface CartItem {
     itemOfferAmount: number;
     quantity: number;
     amount?: number;
+    id?: number;
+    img?: string;
   }
   
   export interface CartState {

@@ -12,7 +12,7 @@ import { useState } from "react";
 export default function HeaderComp() {
   const [isOpenSideBar, setIsOpenSideBar] = useState(false);
   const navigate = useNavigate();
-  const orderItems = useSelector((store) => {
+  const orderItems = useSelector((store: any) => {
    
     return store.cart.items;
   });
