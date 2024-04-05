@@ -11,27 +11,31 @@ export const CategoriesData = [
         title:"Sweets",
         img: cate1,
         color: "#BDF882",
-        bgcolor: "#FFA780"
+        bgcolor: "#FFA780",
+        route: "/sweets"
     },
     {
         id:2,
         title:"Dry Fruits",
         img: cate2,
         color: "#E188DD",
-        bgcolor: "#EAC96A"
+        bgcolor: "#EAC96A",
+        route: "/dryfruits"
     },
     {
         id:3,
         title:"Namkeen",
         img: cate3,
         color: "#96C1E8",
-        bgcolor: "#B5B07E"
+        bgcolor: "#B5B07E",
+        route: "/namkeen"
     },
     {
         id:4,
         title:"Cakes",
         img: cate4,
         color: "#F5AD8E",
-        bgcolor: "#5D9FCE"
+        bgcolor: "#5D9FCE",
+        route: "/cakes"
     }
 ]

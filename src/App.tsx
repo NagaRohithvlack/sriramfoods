@@ -10,6 +10,12 @@ import { Provider } from "react-redux";
 import store from "./store.tsx";
 import RenewPromise from "./components/gifts/RenewPromise.tsx";
 import Cart from "./components/home/header/header-comp/cart/Cart.tsx";
+import SweetPage from "./components/ordernow/sweets/SweetPage.tsx";
+import DryFruitsPage from "./components/ordernow/dryfruits/DryFruitsPage.tsx";
+import NamkeenPage from "./components/ordernow/namkeen/NamkeenPage.tsx";
+import CakesPage from "./components/ordernow/cakes/CakesPage.tsx";
+import PaymentMode from "./components/Payments/paymentsmode/PaymentMode.tsx";
+import OrderConfirmPage from "./components/Payments/paymentsmode/OrderConfirmpage.tsx";
 
 function App() {
   return (
@@ -18,13 +24,18 @@ function App() {
         <Header />
         <Routes>
           <Route path={"/"} element={<Home />} />
-
           <Route path={"/about"} element={<AboutUsPage />} />
           <Route path={"/contactus"} element={<ContactUsPage />} />
           <Route path={"/shop"} element={<Specials />} />
           <Route path={"/contactus"} element={<Specials />} />
           <Route path={"/gifts"} element={<RenewPromise />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/sweets" element={<SweetPage />}/>
+          <Route path="/dryfruits" element={<DryFruitsPage />}/>
+          <Route path="/namkeen" element={<NamkeenPage />} />
+          <Route path="/cakes" element={<CakesPage />} />
+          <Route path="/paymentmode" element={<PaymentMode />} />
+          <Route path="/ordersuccess" element={<OrderConfirmPage />} />
         </Routes>
         <Footer />
       </Provider>
