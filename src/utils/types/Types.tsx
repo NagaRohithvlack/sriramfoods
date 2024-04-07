@@ -85,3 +85,9 @@ export interface CartItem {
   export interface CartState {
     items: CartItem[];
   }
+
+  export const navSchema = z.object({
+    navLink: z.string(),
+    route: z.string(),
+  });
+  export type NavTypes = z.infer<typeof navSchema>;

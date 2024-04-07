@@ -1,7 +1,7 @@
-import cross from "../../../assets/images/cross.png";
 import { z } from "zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import cross from "../../../assets/images/cross.png";
 
 const schema = z.object({
   cardnumber: z.string().min(16).regex(/^\d+$/),
@@ -11,7 +11,7 @@ const schema = z.object({
 
 type FormValues = z.infer<typeof schema>;
 
-function CardDetails() {
+function CardDetails({ onClose }: { onClose: () => void }) {
   const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({
     resolver: zodResolver(schema),
   });
@@ -21,11 +21,11 @@ function CardDetails() {
   };
 
   return (
-    <div className="p-12 md:p-0 md:w-3/6 md:h-2/6 mx-auto">
+    <div className=" md:p-0  mx-auto bg-white">
       <div className="w-full flex justify-between items-center bg-[#e1e1e1] p-2">
         <h1 className="text-xl font-medium">Enter Card Details</h1>
         <div>
-          <button>
+          <button onClick={onClose}>
             <img src={cross} alt="cross" className="w-8" />
           </button>
         </div>
@@ -75,7 +75,7 @@ function CardDetails() {
         </div>
 
         <div className="bg-[#e1e1e1] flex justify-center gap-4 p-2">
-          <button className="p-2 border border-slate-700 rounded-full bg-white">
+          <button className="p-2 border border-slate-700 rounded-full bg-white" onClick={onClose}>
             cancel
           </button>
           <button

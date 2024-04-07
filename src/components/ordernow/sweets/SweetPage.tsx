@@ -5,7 +5,7 @@ import lines1 from "../../../assets/images/lines1.png"
 function SweetPage() {
 
     return(
-      <div className="flex flex-col md:p-12 p-4 md:p-12 gap-20">
+      <div className="main_head flex flex-col md:p-12 p-4 md:p-12 gap-20">
       <div className="flex flex-col justify-center items-center">
         <img src={lines1} alt="designed-arrow" className=" w-4/6 md:w-2/6" />
         <h1 className="text-4xl text-center font-semibold">Delicious Sweets</h1>
