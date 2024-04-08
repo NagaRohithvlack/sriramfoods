@@ -16,73 +16,73 @@ export const NamkeenData = [
     {
         itemTitle: "namkeen1",
         img: namkeen1,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "namkeen2",
         img: namkeen2,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "namkeen3",
         img: namkeen3,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "namkeen4",
         img: namkeen4,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "namkeen5",
         img: namkeen5,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "namkeen6",
         img: namkeen6,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "namkeen7",
         img: namkeen7,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "namkeen8",
         img: namkeen8,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "namkeen9",
         img: namkeen9,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "namkeen10",
         img: namkeen10,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "namkeen11",
         img: namkeen11,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "namkeen12",
         img: namkeen12,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
 ]

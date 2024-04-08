@@ -84,6 +84,10 @@ export interface CartItem {
   
   export interface CartState {
     items: CartItem[];
+    totalAmount: number;
+    totalQuantity: number;
+    deliveryCharge: number;
+    total: number;
   }
 
   export const navSchema = z.object({

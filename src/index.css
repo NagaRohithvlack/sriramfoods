@@ -4,7 +4,7 @@
 
 @layer components {
   .main_head {
-    @apply mt-[130px];
+    @apply sm:mt-[70px] md:mt-[120px];
   }
 }
 
