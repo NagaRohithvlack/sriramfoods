@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { addItem } from "../../header/header-comp/cart/CartSlice";
 import { SqCardPropType } from "../../../../utils/types/Types";
+import { motion } from "framer-motion";
 
 export default function SquareCardItem({ item }: SqCardPropType) {
 
@@ -11,14 +12,16 @@ export default function SquareCardItem({ item }: SqCardPropType) {
   return (
     <div className=" relative rounded-lg">
       <img src={item.img} alt="" className="rounded-lg h-full" />
-      <div className="absolute bottom-1 right-1 left-1 bg-black opacity-80  text-white flex justify-between items-center px-4 py-3 rounded-lg">
+      <div className="absolute bottom-0 right-0 left-0 bg-black opacity-80  text-white flex justify-between items-center px-2 md:px-4 py-3 rounded-lg">
         <p className="">&#8377;{item.itemOfferAmount}</p>
-        <button
-          className="border border-white bg-transparent px-6 py-1 rounded-full"
-          onClick={handleAddCartItem}
+        <motion.button
+          className="border border-white bg-transparent px-1 md:px-6 md:py-1 rounded-full "
+          whileHover={{scale: 1.1}}
+          whileTap={{scale: 0.95}}
+          onClick={() => {handleAddCartItem()} } 
         >
           {item.btntext}
-        </button>
+        </motion.button>
       </div>
     </div>
   );

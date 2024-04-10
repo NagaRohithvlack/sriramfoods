@@ -4,7 +4,7 @@ import RenewPromiseComponent from "./renew-promise/RenewPromiseComponent";
 
 export default function RenewPromise() {
   return (
-    <div>
+    <div className="main_head">
       <BorderLineUp />
       <RenewPromiseComponent />
       <BorderLine />

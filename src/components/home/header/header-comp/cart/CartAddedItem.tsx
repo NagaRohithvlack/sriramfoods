@@ -6,6 +6,7 @@ import quantityDecrement from "../../../../../assets/images/quantity-decrement.p
 import Delete from "../../../../../assets/images/delete.jpeg";
 import axios from "axios";
 import { CartItem } from "../../../../../utils/types/Types";
+import { motion } from "framer-motion";
 import {
   deleteItem,
   emptyingCart,
@@ -86,12 +87,14 @@ export default function CartAddedItems() {
     <div className="flex flex-col gap-8 w-full font-medium md:mt-28 mt-14">
       <div className="flex justify-between py-6 mx-6 border-b border-b-slate-500">
         <p className="text-3xl">Shopping Cart</p>
-        <button
+        <motion.button
           className="self-end text-lg border border-slate-400 px-4 rounded-lg"
+          whileHover={{scale: 1.1}}
+          whileTap={{scale: 0.95}}
           onClick={handleEmptyingCart}
         >
           Empty Cart
-        </button>
+        </motion.button>
       </div>
       <div className="flex justify-between px-6">
         <div className="flex flex-col lg:flex-row gap-6 w-full ">
@@ -188,17 +191,22 @@ export default function CartAddedItems() {
                           MRP : {item.itemOfferAmount}/-
                         </p>
                       </div>
-                      <div className="absolute top-1 right-1">
-                        <button>
+
+                      <div>
+                        <motion.button className=""
+                        whileHover={{scale: 1.3}}
+                        whileTap={{scale: 1.3}}>
+
                           <img
                             src={Delete}
                             alt=""
                             className="w-4 flex items-center"
+                            
                             onClick={() => {
                               handleDeleteCartItem(item);
                             }}
                           />
-                        </button>
+                        </motion.button>
                       </div>
                     </div>
                   </div>
@@ -253,20 +261,23 @@ export default function CartAddedItems() {
                   <p>&#8377; {totalAmount + deliveryCharge}</p>
                 </div>
                 <p>Total Item's : {totalQuantity}</p>
-                <button
+                <motion.button
                   onClick={ 
                   () => { onSubmit();
                     navigate("/paymentmode");
                   }
                   }
                   
-                  className="flex justify-between w-5/6 mx-auto p-2 rounded-lg border border-slate-900 bg-[#FCA120] mt-8"
+                  className="flex justify-between w-5/6 mx-auto p-2 rounded-lg border border-slate-900 bg-[#FCA120]"
+                  whileHover={{scale: 1.1}}
+          whileTap={{scale: 0.95}}
+
                 >
                   <p>&#8377;{totalAmount + deliveryCharge}</p>
                   <p>
                     <a href="">Proceed to Buy &rarr;</a>{" "}
                   </p>
-                </button>
+                </motion.button>
               </div>
             </div>
           </div>

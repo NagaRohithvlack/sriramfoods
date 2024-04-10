@@ -9,37 +9,37 @@ export const DryFruitsData = [
     {
         itemTitle: "Dryfruit1",
         img: DryFruits1,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "Dryfruit2",
         img: DryFruits2,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "Dryfruit3",
         img: DryFruits3,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "Dryfruit4",
         img: DryFruits4,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "Dryfruit5",
         img: DryFruits5,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "Dryfruit6",
         img: DryFruits6,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     }
 ]

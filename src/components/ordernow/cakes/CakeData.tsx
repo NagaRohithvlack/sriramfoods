@@ -18,91 +18,91 @@ export const CakeData = [
     {
         itemTitle: "cake1",
         img: cakes1,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "cake2",
         img: cakes2,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "cake3",
         img: cakes3,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "cake4",
         img: cakes4,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "cake5",
         img: cakes5,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "cake6",
         img: cakes6,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "cake7",
         img: cakes7,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "cake8",
         img: cakes8,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "cake9",
         img: cakes9,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "cake10",
         img: cakes10,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "cake11",
         img: cakes11,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "cake12",
         img: cakes12,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "cake13",
         img: cakes13,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "cake14",
         img: cakes14,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     },
     {
         itemTitle: "cake15",
         img: cakes15,
-        price: "350",
+        itemOfferAmount: 350,
         btntext: "Add To Cart"
     }
 ]

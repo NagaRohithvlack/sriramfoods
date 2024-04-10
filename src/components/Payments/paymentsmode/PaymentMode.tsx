@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
 import CardDetailsPage from "./CardDetailsPage";
 import AddDeliveryPage from "./AddDeliveryPage";
+import { motion } from "framer-motion";
+import { CartState } from "../../../utils/types/Types";
+import { useDispatch, useSelector } from "react-redux";
 
 function PaymentMode () {
     const navigate = useNavigate();
@@ -13,6 +16,9 @@ function PaymentMode () {
   const [showAddAddress, setShowAddAddress] = useState(false);
   const cardDetailsRef = useRef(null);
   const addAddressRef = useRef(null);
+
+  const dispatch = useDispatch();
+  const { totalAmount, totalQuantity, deliveryCharge, total } = useSelector((state: CartState) => state);
 
   const handleEnterCardDetails = () => {
     setShowCardDetails(true);
@@ -59,9 +65,12 @@ function PaymentMode () {
                     </div>
 
                     <div className="md:w-1/5 md:order-1">
-                        <button onClick={handleEnterAddAddress} className="bg-[#fca120] border border-slate-900 rounded-lg p-2 px-6 md:px-4 md:p-2 ">
+                        <motion.button onClick={handleEnterAddAddress} 
+                        whileHover={{scale: 1.1}}
+                        whileTap={{scale: 0.95}}
+                        className="bg-[#fca120] border border-slate-900 rounded-lg p-2 px-6 md:px-4 md:p-2 ">
             Add New Address
-          </button>
+          </motion.button>
           {showAddAddress && (
             <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center" onClick={handleOverlayClick}>
               <div ref={addAddressRef} onClick={handlePopupClick}>
@@ -69,11 +78,8 @@ function PaymentMode () {
               </div>
             </div>
           )}
-                    </div>
-
-                    
+                    </div>  
                 </div>
- 
             </div>
 
              <div className=" flex flex-col gap-2">
@@ -106,9 +112,6 @@ function PaymentMode () {
 
                     </div>
                     </div>
-
-                    
-
                  </div>
 
 
@@ -162,30 +165,34 @@ function PaymentMode () {
              <div className="flex flex-col text-xl font-semibold gap-2">
                 <div className="flex justify-between">
                     <p>Total Items</p>
-                    <p>5</p>
+                    <p>{totalQuantity}</p>
                 </div>
                 <div className="flex justify-between">
                     <p>SubTotal</p>
-                    <p>5</p>
+                    <p>{totalAmount}</p>
                 </div>
                 <div className="flex justify-between">
                     <p>Shipping</p>
-                    <p>5</p>
+                    <p>{deliveryCharge}</p>
                 </div>
                 <div className="flex justify-between">
                     <p>{"Total (incl tax)"}</p>
-                    <p>5</p>
+                    <p>{total}</p>
                 </div>
                 
              </div>
              
              <div >
-                <button onClick={ () => {navigate("/ordersuccess")}} className="border border-slate-900 w-full rounded-full md:rounded-lg bg-[#fca120] text-xl font-semibold p-6">
+                <motion.button onClick={ () => {navigate("/ordersuccess")}}
+                whileHover={{scale: 1.05}}
+                whileTap={{scale: 0.95}}
+                className="border border-slate-900 w-full rounded-full md:rounded-lg bg-[#fca120] text-xl font-semibold p-6">
                     <div className="flex w-full justify-between">
                         <p>&#x20B9; amount</p>
                         <p className="text-xl font-semibold">checkout &rarr;</p>
                     </div>
-                </button>
+                </motion.button>
+                
              </div>
             
         </div>

@@ -5,6 +5,9 @@ import Cart from "../../../../assets/images/shopping-cart.png";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Example } from "./Example";
+import { motion } from "framer-motion";
+
+
 export default function HeaderComp() {
   const navigate = useNavigate();
   const orderItems = useSelector((store:any) => {
@@ -90,9 +93,11 @@ export default function HeaderComp() {
                 <span className="absolute -right-4 ">{orderItems.length}</span>
               </li>
               <li>
-                <button className="px-6 py-1 bg-[#FCA120] rounded-full">
+                <motion.button className="px-6 py-1 bg-[#FCA120] rounded-full"
+                whileHover={{scale: 1.2}}
+                whileTap={{scale: 1.2}}>
                   Login
-                </button>
+                </motion.button>
               </li>
             </div>
           </ul>
