@@ -4,7 +4,11 @@ import FooterHomeImg from "../../../../assets/images/footer-home.jpeg";
 import FooterCategoryImg from "../../../../assets/images/footer-categories.jpeg";
 import FooterAcImg from "../../../../assets/images/footer-account.jpeg";
 import FooterCartImg from "../../../../assets/images/footer-cart.jpeg";
+import { useSelector } from "react-redux";
 export default function FooterPage() {
+  const orderItems = useSelector((store:any) => {
+    return store.cart.items;
+  });
   return (
     <div className="flex flex-col justify-between h-1/6 pt-5 w-full lg:flex-row">
       <div className="flex flex-col gap-2 w-full lg:w-2/6 bg-gradient-to-br from-[#754B34] to-[#4A2E1F] p-8">
@@ -60,14 +64,14 @@ export default function FooterPage() {
           <div className="w-full lg:w-2/6">
             <p className="text-sm">Email:Sairamfoods.gmail.com</p>
           </div>
-          <div className="w-full lg:w-3/6">
+          <div className="w-full lg:w-3/6 mb-16 sm:mb-0">
             <p className="text-sm">
               &copy; 2024 Copyright.Sai Ram Foods All Rights Reserved
             </p>
           </div>
         </div>
         <div>
-          <ul className="flex items-center justify-around  bg-[#F8B919] sm:hidden">
+          <ul className="flex items-center justify-around py-2 w-full fixed bottom-0 right-0 left-0 bg-[#F8B919] sm:hidden">
             <NavLink to="/">
               <div className="w-10 h-10 rounded-full border-4 border-transparent ">
                 <img
@@ -93,13 +97,14 @@ export default function FooterPage() {
             <NavLink to="/">
               <div>
                 <div className="w-12 h-12">
-                  <div className="w-10 h-10 rounded-full border-4 border-transparent">
+                  <div className="w-10 h-10 rounded-full border-4 border-transparent relative">
                     <img src={FooterAcImg} alt="FooterAcImg" className="w-10" />
+                    <span className="text-green-600 text-lg absolute -top-3 left-32">{orderItems.length}</span>
                   </div>
                 </div>
               </div>
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="/cart">
               <div>
                 <div className="w-12 h-12">
                   <div className="w-10 h-10 rounded-full border-4 border-transparent">
