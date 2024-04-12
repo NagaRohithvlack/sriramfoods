@@ -11,7 +11,7 @@ export default function ExperienceSairam() {
           <MovingDotsRightComp />     
         </div>
         <div className="flex justify-center items-center md:h-4/6 md:pt-0"> 
-          <img src={firstImg} className="w-4/6 md:h-4/6" alt="firstImg" />
+          <img src={firstImg} className="w-4/6 md:w-full lg:w-5/6 lg:h-4/6" alt="firstImg" />
         </div>
       </div>
       <div className="sm:w-3/6 h-full flex md:justify-between items-center ">

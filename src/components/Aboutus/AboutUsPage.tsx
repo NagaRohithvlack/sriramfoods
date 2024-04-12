@@ -6,13 +6,13 @@ function LegacyPage () {
     return (
         <div className="main_head flex flex-col justify-center items-center md:gap-12 md:h-screen md:w-screen md:flex md:flex-row bg-[#FFF6F1]">
             
-            <div className="md:w-3/6 px-20 pt-20 md:p-16 md:px-0 md:pt-0 md:p-8 flex md:flex-row relative md:h-5/6 ">
-                <div className=" md:w-full flex justify-center ">
-                <div className=" border-[8px] md:border-[16px] border-white ">
+            <div className="md:w-3/6 px-20 pt-20 md:p-16 md:px-0 md:pt-0 lg:p-8 flex md:flex-row relative md:h-5/6 ">
+                <div className="md:p-14 lg:p-0 md:w-full flex justify-center ">
+                <div className=" border-[8px] md:border-[12px] lg:border-[16px] border-white ">
                     <img src={AboutUsData[0].img} className=" h-full w-full "/>
                 </div>
     
-                <h1 className="absolute right-16 top-20 md:top-0 flex flex-col text-center text-xs md:text-lg ml-2 md:ml-12 ">
+                <h1 className="absolute right-16 md:right-8 lg:right-16 top-20 md:top-14 lg:top-8 flex flex-col text-center text-xs md:text-sm lg:text-lg ml-2 lg:ml-12 ">
                     <span >O</span>
                     <span >U</span>
                     <span >R</span>
@@ -23,8 +23,8 @@ function LegacyPage () {
                     <span >Y</span>
                 </h1>
                 
-                <div className=" absolute bottom-0 md:bottom-8 right-16 md:bottom-2 md:right-18 md:h-3/6 md:w-3/6 border-[8px] md:border-[16px] border-white" >
-                    <img src={AboutUsData[0].img} className="w-[110px] h-[80px] sm:w-[220px] sm:h-[150px] md:h-full md:w-full object-cover object-center" />
+                <div className=" absolute bottom-0 md:bottom-32 lg:bottom-8 right-16 md:right-8 lg:right-18 lg:h-3/6 lg:w-3/6 border-[8px] md:border-[12px] lg:border-[16px] border-white" >
+                    <img src={AboutUsData[0].img} className="w-[110px] h-[80px] md:w-[180px] md:h-[120px] lg:h-full lg:w-full object-cover object-center" />
                 </div>
                 </div>
             </div>

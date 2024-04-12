@@ -12,7 +12,7 @@ function LegacyPage () {
                     <img src={LegacyData[0].img} className=" lg:h-full md:w-full"/>
                 </div>
                 <div className="">
-                <h1 className="flex flex-col text-center text-xs md:text-lg ml-2 md:ml-12">
+                <h1 className="flex flex-col text-center text-xs md:text-sm lg:text-lg ml-2 md:ml-8 lg:ml-12">
                     <span >O</span>
                     <span >U</span>
                     <span >R</span>
@@ -23,7 +23,7 @@ function LegacyPage () {
                     <span >Y</span>
                 </h1>
                 </div>
-                <div className=" absolute bottom-0 md:bottom-8 right-16 md:bottom-28 lg:bottom-2 lg:right-28 md:h-2/6 lg:h-3/6 md:w-3/6 border-[16px] border-white" >
+                <div className=" absolute bottom-0 lg::bottom-8 right-16 md:bottom-28 lg:bottom-2 lg:right-28 md:h-2/6 lg:h-3/6 md:w-3/6 border-[16px] border-white" >
                     <img src={LegacyData[0].img} className="w-[150px] h-[100px] sm:w-[220px] sm:h-[150px] md:h-full md:w-full object-cover object-center" />
                 </div>
                 </div>
