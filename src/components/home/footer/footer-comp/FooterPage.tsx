@@ -4,7 +4,15 @@ import FooterHomeImg from "../../../../assets/images/footer-home.jpeg";
 import FooterCategoryImg from "../../../../assets/images/footer-categories.jpeg";
 import FooterAcImg from "../../../../assets/images/footer-account.jpeg";
 import FooterCartImg from "../../../../assets/images/footer-cart.jpeg";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+import { motion } from "framer-motion";
 export default function FooterPage() {
+  const orderItems = useSelector((store:any) => {
+    return store.cart.items;
+  });
+
+  const [activeIndex, setActiveIndex] = useState(-1);
   return (
     <div className="flex flex-col justify-between h-1/6 pt-5 w-full lg:flex-row">
       <div className="flex flex-col gap-2 w-full lg:w-2/6 bg-gradient-to-br from-[#754B34] to-[#4A2E1F] p-8">
@@ -60,59 +68,99 @@ export default function FooterPage() {
           <div className="w-full lg:w-2/6">
             <p className="text-sm">Email:Sairamfoods.gmail.com</p>
           </div>
-          <div className="w-full lg:w-3/6">
+          <div className="w-full lg:w-3/6 mb-16 sm:mb-0">
             <p className="text-sm">
               &copy; 2024 Copyright.Sai Ram Foods All Rights Reserved
             </p>
           </div>
         </div>
         <div>
-          <ul className="flex items-center justify-around  bg-[#F8B919] sm:hidden">
-            <NavLink to="/">
-              <div className="w-10 h-10 rounded-full border-4 border-transparent ">
-                <img
-                  src={FooterHomeImg}
-                  alt="FooterHomeImg"
-                  className="w-10 bg-transparent"
-                />
-              </div>
-            </NavLink>
-            <NavLink to="/">
-              <div>
-                <div className="w-12 h-12">
-                  <div className="w-10 h-10 rounded-full border-4 border-transparent absolute">
-                    <img
-                      src={FooterCategoryImg}
-                      alt="FooterCategoryImg"
-                      className="w-10"
-                    />
-                  </div>
-                </div>
-              </div>
-            </NavLink>
-            <NavLink to="/">
-              <div>
-                <div className="w-12 h-12">
-                  <div className="w-10 h-10 rounded-full border-4 border-transparent">
-                    <img src={FooterAcImg} alt="FooterAcImg" className="w-10" />
-                  </div>
-                </div>
-              </div>
-            </NavLink>
-            <NavLink to="/">
-              <div>
-                <div className="w-12 h-12">
-                  <div className="w-10 h-10 rounded-full border-4 border-transparent">
-                    <img
-                      src={FooterCartImg}
-                      alt="FooterCartImg"
-                      className="w-10"
-                    />
-                  </div>
-                </div>
-              </div>
-            </NavLink>
-          </ul>
+        <ul className="icons flex items-center justify-around py-2 w-full h-[72px] fixed bottom-0 right-0 left-0 bg-[#F8B919] sm:hidden">
+        <NavLink to="/" onClick={() => setActiveIndex(0)}>
+        <motion.div className={`footer-icon ${activeIndex === 0 ? 'active border-[#ffbc1c] rounded-full border-[8px] -translate-y-3' : ''}`} 
+       animate={activeIndex === 0 ? { y: -10, scale: 1.4 } : { y: 0, scale: 1 }}
+       transition={{ type: 'spring', stiffness: 500, damping: 20, duration: 0.5 }}
+        >
+      <div className={`w-12 h-12 flex items-center justify-center ${activeIndex === 0 ? 'border-white border-white rounded-full border-[6px]' : ''}`}>
+        <img
+          src={FooterHomeImg}
+          alt="FooterHomeImg"
+          className="w-10 bg-transparent"
+        />
+      </div>
+    </motion.div>
+  </NavLink>
+        <NavLink to="/shop" onClick={() => setActiveIndex(1)}>
+        <motion.div className={`footer-icon ${activeIndex === 1 ? 'active border-[#ffbc1c] rounded-full border-[8px] -translate-y-3' : ''}`} 
+       animate={activeIndex === 1 ? { y: -10, scale: 1.4 } : { y: 0, scale: 1 }}
+       transition={{ type: 'spring', stiffness: 500, damping: 20, duration: 0.5 }}
+        >
+      <div className={`w-12 h-12 flex items-center justify-center ${activeIndex === 1 ? 'border-white border-white rounded-full border-[6px]' : ''}`}>
+        <img
+          src={FooterCategoryImg}
+          alt="FooterCategoryImg"
+          className="w-10 bg-transparent"
+        />
+      </div>
+    </motion.div>
+  </NavLink>
+        <NavLink to="/" onClick={() => setActiveIndex(2)}>
+        <motion.div className={`footer-icon ${activeIndex === 2 ? 'active border-[#ffbc1c] rounded-full border-[8px] -translate-y-3' : ''}`} 
+       animate={activeIndex === 2 ? { y: -10, scale: 1.4 } : { y: 0, scale: 1 }}
+       transition={{ type: 'spring', stiffness: 500, damping: 20, duration: 0.5 }}
+        >
+      <div className={`w-12 h-12 flex items-center justify-center ${activeIndex === 2 ? 'border-white border-white rounded-full border-[6px]' : ''}`}>
+        <img
+          src={FooterAcImg}
+          alt="FooterAcImg"
+          className="w-10 bg-transparent"
+        />
+      </div>
+    </motion.div>
+  </NavLink>
+        <NavLink to="/cart" onClick={() => setActiveIndex(3)}>
+        <motion.div className={`footer-icon ${activeIndex === 3 ? 'active border-[#ffbc1c] rounded-full border-[8px] -translate-y-3' : ''}`} 
+       animate={activeIndex === 3 ? { y: -10, scale: 1.4 } : { y: 0, scale: 1 }}
+       transition={{ type: 'spring', stiffness: 500, damping: 20, duration: 0.5 }}
+        >
+          <div className="w-12 h-12 flex items-center justify-center">
+      <div className={`w-12 h-12 relative flex items-center justify-center ${activeIndex === 3 ? 'border-white border-white rounded-full border-[6px]' : ''}`}>
+        <img
+          src={FooterCartImg}
+          alt="footercartimg"
+          className="w-10 bg-transparent"
+        />
+        {orderItems.length ? (<span className=" bg-[#593827] px-1 font-medium rounded-full text-white text-lg absolute -right-2 -top-4">{orderItems.length}</span>) : ""}
+      </div>
+      </div>
+
+    </motion.div>
+  </NavLink>
+  
+  
+  {/* <NavLink to="/cart" onClick={() => setActiveIndex(3)}>
+  <motion.div className={`footer-icon ${activeIndex === 3 ? 'active border-[#ffbc1c] rounded-full border-[8px] -translate-y-3' : ''}`}
+  animate={activeIndex === 3 ? { y: -10, scale: 1.3 } : { y: 0, scale: 1 }}
+  transition={{ type: 'spring', stiffness: 500, damping: 20, duration: 0.5 }}
+  >
+    <div className={`footer-icon ${activeIndex === 3 ? 'active border-white rounded-full border-[6px] scale-icon' : ''}`}>
+      <div className="w-12 h-12 flex items-center justify-center">
+        <div className={`w-10 h-10 rounded-full border-4 border-transparent relative transition-transform duration-300 ${activeIndex === 3 ? 'scale-icon' : ''}`}>
+          <img
+            src={FooterCartImg}
+            alt="FooterCartImg"
+            className="w-10 transition-transform duration-300"
+          />
+          {orderItems.length ? (<span className=" bg-[#593827] px-1 font-medium rounded-full text-white text-lg absolute -right-2 -top-4">{orderItems.length}</span>) : ""}
+
+        </div>
+      </div>
+    </div>
+    </motion.div>
+  </NavLink> */}
+</ul>
+
+
         </div>
       </div>
     </div>

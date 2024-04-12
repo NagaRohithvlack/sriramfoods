@@ -27,9 +27,11 @@ export type OrderPropType = z.infer<typeof OrderPropSchema>
 export const SqCardSchema = z.object({
     id:z.optional(z.number()),
     img: z.string(),
-    itemTitle: z.optional(z.string()),
+    itemTitle:z.string(),
     itemOfferAmount: z.number(),
     btntext: z.string(),
+    quantity: z.number(),
+    
     
 })
 
@@ -37,6 +39,7 @@ export type SqCardType = z.infer<typeof SqCardSchema>
 
 export const SqCardPropSchema = z.object({
     item: SqCardSchema,
+    
 })
 
 export type SqCardPropType = z.infer<typeof SqCardPropSchema>
