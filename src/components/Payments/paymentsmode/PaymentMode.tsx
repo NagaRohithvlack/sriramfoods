@@ -50,21 +50,21 @@ function PaymentMode () {
   };
     return (
         <div className="w-full">
-        <div className="main_head flex  flex-col px-6 md:px-16 gap-8 p-4 pt-16 md:pt-0 mx-auto w-full md:w-3/6 shadow-xl">
+        <div className="main_head flex  flex-col px-6 md:px-10 lg:px-16 gap-8 p-4 pt-16 md:pt-0 mx-auto w-full md:w-3/6 shadow-xl">
 
             <div className="flex flex-col gap-8 ">
 
                 <div className="">
                     <h1 className="text-2xl font-medium ">Delivery Address: </h1>
                 </div>
-                <div className="flex flex-col md:flex md:flex-row gap-10 md:gap-16 ">
+                <div className="flex flex-col md:flex lg:flex-row gap-10  ">
 
                     <div className="flex flex-col w-3/6 text-left gap-2 md:gap-4 md:order-2">
                         <h1 className=" text-xl font-semibold underline underline-offset-4">Default Address: </h1>
                         <p className="text-lg font-normal w-[300px]">Plot No: 60, Road NO: 5 , Ayyappa Society , Madhapur,Hyderabad - 500081,Telangana, India. </p>
                     </div>
 
-                    <div className="md:w-1/5 md:order-1">
+                    <div className="lg:w-2/5 md:order-1">
                         <motion.button onClick={handleEnterAddAddress} 
                         whileHover={{scale: 1.1}}
                         whileTap={{scale: 0.95}}

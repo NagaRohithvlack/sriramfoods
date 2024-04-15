@@ -10,7 +10,7 @@ export default function GiftBoxPage() {
         <img
           src={GiftBox}
           alt=""
-          className=" absolute -left-10 md:left-[30px] -bottom-4"
+          className=" absolute -left-10 md:-left-16 lg:left-[30px] -bottom-4 md:-bottom-12 lg:-bottom-4"
         />
         <img
           src={GiftBoxBackground}

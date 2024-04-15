@@ -1,6 +1,6 @@
 function ContactUsPage () {
     return (
-        <div className="main_head p-8 md:p-16 flex flex-col md:gap-4 justify-center items-center md:flex-row">
+        <div className="main_head p-8 lg:p-16 flex flex-col md:gap-4 justify-center items-center md:flex-row">
 
             <div className="p-8 md:w-2/6 md:flex-col space-y-6 ">
 
