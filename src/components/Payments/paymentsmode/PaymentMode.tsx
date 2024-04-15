@@ -16,8 +16,6 @@ function PaymentMode () {
   const [showAddAddress, setShowAddAddress] = useState(false);
   const cardDetailsRef = useRef(null);
   const addAddressRef = useRef(null);
-
-  const dispatch = useDispatch();
   const { totalAmount, totalQuantity, deliveryCharge, total } = useSelector((state: CartState) => state);
 
   const handleEnterCardDetails = () => {
@@ -36,16 +34,16 @@ function PaymentMode () {
     setShowAddAddress(false);
   };
 
-  const handleOverlayClick = (event) => {
-    if (cardDetailsRef.current && !cardDetailsRef.current.contains(event.target)) {
+  const handleOverlayClick = (event: React.MouseEvent) => {
+    if (cardDetailsRef.current && !cardDetailsRef.current.contains(event.target as Node)) {
       setShowCardDetails(false);
     }
-    if (addAddressRef.current && !addAddressRef.current.contains(event.target)) {
+    if (addAddressRef.current && !addAddressRef.current.contains(event.target as Node)) {
       setShowAddAddress(false);
     }
   };
 
-  const handlePopupClick = (event) => {
+  const handlePopupClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
     return (

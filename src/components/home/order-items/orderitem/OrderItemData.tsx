@@ -1,5 +1,4 @@
 import KajuKatli from "../../../../assets/images/kaju-katli.jpg";
-// import gulab from "../../../../assets/images/gulab-jamun.jpg";
 
 export const OrderItemData = [
   {

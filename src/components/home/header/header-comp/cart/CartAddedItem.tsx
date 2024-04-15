@@ -13,7 +13,9 @@ import {
   updateCartItemQuantity,
   decrementingCartItemQuantity,
 } from "./CartSlice";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import YouMayLike from "./youmaylike/YouMaylike";
+
 const deliveryCharge = 40;
 export default function CartAddedItems() {
   const [totalAmount, setTotalAmount] = useState(0);
@@ -275,7 +277,7 @@ export default function CartAddedItems() {
                 >
                   <p>&#8377;{totalAmount + deliveryCharge}</p>
                   <p>
-                    <a href="">Proceed to Buy &rarr;</a>{" "}
+                    Proceed to Buy &rarr;
                   </p>
                 </motion.button>
               </div>
@@ -283,6 +285,9 @@ export default function CartAddedItems() {
           </div>
         </div>
       </div>
+        <div>
+          <YouMayLike />
+        </div>
     </div>
   );
 }

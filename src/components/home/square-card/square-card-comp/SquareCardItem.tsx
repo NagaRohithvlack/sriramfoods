@@ -2,12 +2,18 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../../header/header-comp/cart/CartSlice";
 import { SqCardPropType } from "../../../../utils/types/Types";
 import { motion } from "framer-motion";
+import { CartItem } from "../../../../utils/types/Types";
+
 
 export default function SquareCardItem({ item }: SqCardPropType) {
 
   const dispatch = useDispatch();
   function handleAddCartItem() {
-    dispatch(addItem(item));
+    const cartItem: CartItem = {
+      ...item,
+      quantity: 1, 
+    };
+    dispatch(addItem(cartItem));
   }
   return (
     <div className=" relative rounded-lg">

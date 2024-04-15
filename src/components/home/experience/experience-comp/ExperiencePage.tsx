@@ -10,7 +10,7 @@ export default function ExperienceSairam() {
         <div className="absolute -left-20 md:left-14 top-4 md:top-14 ">
           <MovingDotsRightComp />     
         </div>
-        <div className="flex justify-center items-center md:h-4/6 md:pt-0"> 
+        <div className="flex justify-center items-center md:h-4/6 md:pt-0 "> 
           <img src={firstImg} className="w-4/6 md:w-full lg:w-5/6 lg:h-4/6" alt="firstImg" />
         </div>
       </div>
