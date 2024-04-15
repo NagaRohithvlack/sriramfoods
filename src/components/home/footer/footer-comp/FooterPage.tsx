@@ -5,14 +5,17 @@ import FooterCategoryImg from "../../../../assets/images/footer-categories.jpeg"
 import FooterAcImg from "../../../../assets/images/footer-account.jpeg";
 import FooterCartImg from "../../../../assets/images/footer-cart.jpeg";
 import { useSelector } from "react-redux";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
+
 export default function FooterPage() {
   const orderItems = useSelector((store:any) => {
     return store.cart.items;
   });
 
   const [activeIndex, setActiveIndex] = useState(-1);
+
   return (
     <div className="flex flex-col justify-between h-1/6 pt-5 w-full lg:flex-row">
       <div className="flex flex-col gap-2 w-full lg:w-2/6 bg-gradient-to-br from-[#754B34] to-[#4A2E1F] p-8">
@@ -75,6 +78,7 @@ export default function FooterPage() {
           </div>
         </div>
         <div>
+
         <ul className="icons flex items-center justify-around py-2 w-full h-[72px] fixed bottom-0 right-0 left-0 bg-[#F8B919] sm:hidden">
         <NavLink to="/" onClick={() => setActiveIndex(0)}>
         <motion.div className={`footer-icon ${activeIndex === 0 ? 'active border-[#ffbc1c] rounded-full border-[8px] -translate-y-3' : ''}`} 
@@ -160,6 +164,55 @@ export default function FooterPage() {
   </NavLink> */}
 </ul>
 
+
+
+          <ul className="flex items-center justify-around py-2 w-full fixed bottom-0 right-0 left-0 bg-[#F8B919] sm:hidden">
+            <NavLink to="/">
+              <div className="w-10 h-10 rounded-full border-4 border-transparent ">
+                <img
+                  src={FooterHomeImg}
+                  alt="FooterHomeImg"
+                  className="w-10 bg-transparent"
+                />
+              </div>
+            </NavLink>
+            <NavLink to="/">
+              <div>
+                <div className="w-12 h-12">
+                  <div className="w-10 h-10 rounded-full border-4 border-transparent absolute">
+                    <img
+                      src={FooterCategoryImg}
+                      alt="FooterCategoryImg"
+                      className="w-10"
+                    />
+                  </div>
+                </div>
+              </div>
+            </NavLink>
+            <NavLink to="/">
+              <div>
+                <div className="w-12 h-12">
+                  <div className="w-10 h-10 rounded-full border-4 border-transparent relative">
+                    <img src={FooterAcImg} alt="FooterAcImg" className="w-10" />
+                    <span className="text-green-600 text-lg absolute -top-3 left-32">{orderItems.length}</span>
+                  </div>
+                </div>
+              </div>
+            </NavLink>
+            <NavLink to="/cart">
+              <div>
+                <div className="w-12 h-12">
+                  <div className="w-10 h-10 rounded-full border-4 border-transparent">
+                    <img
+                      src={FooterCartImg}
+                      alt="FooterCartImg"
+                      className="w-10"
+                    />
+                  </div>
+                </div>
+              </div>
+            </NavLink>
+          </ul>
 
         </div>
       </div>

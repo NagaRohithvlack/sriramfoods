@@ -15,6 +15,7 @@ import {
 } from "./CartSlice";
 import { useNavigate } from "react-router-dom";
 import YouMayLike from "./youmaylike/YouMaylike";
+
 const deliveryCharge = 40;
 export default function CartAddedItems() {
   const [totalAmount, setTotalAmount] = useState(0);
@@ -22,6 +23,7 @@ export default function CartAddedItems() {
   const [checkedItems, setCheckedItems] = useState<CartItem[]>([]);
   const addedCartItems = useSelector((store: any) => store.cart.items);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const onSubmit = async () => {
     try {
       const TotalBillAmount = totalAmount + deliveryCharge;
@@ -82,7 +84,7 @@ export default function CartAddedItems() {
   }
   if (addedCartItems.length === 0) return <NothingInCart />;
   console.log(checkedItems);
-  const navigate = useNavigate();
+  
   return (
     <div className="flex flex-col gap-8 w-full font-medium md:mt-28 mt-14">
       <div className="flex justify-between py-6 mx-6 border-b border-b-slate-500">
@@ -102,7 +104,7 @@ export default function CartAddedItems() {
             {addedCartItems.map((item: CartItem) => (
               <div
                 key={item.id}
-                className="flex w-full py-4 border border-slate-200 md:gap-6 gap-3 items-center justify-between rounded-md shadow-md"
+                className="flex w-full py-4 border border-slate-200 md:gap-6 gap-3 items-center justify-between  rounded-md shadow-md relative"
               >
                 <div className="flex items-center justify-center w-1/6 md:gap-1 gap-1 ">
                   <div>
@@ -127,7 +129,7 @@ export default function CartAddedItems() {
                 </div>
                 <div className="flex items-center justify-start w-5/6">
                   <div className="flex flex-col gap-3 md:gap-0 w-full items-start justify-around sm:flex-row sm:justify-between">
-                    <div className="flex w-1/6">
+                    <div className="flex ">
                       <div className="flex ">
                         <p className="md:text-lg text-md">{item.itemTitle} </p>
                       </div>
@@ -191,10 +193,12 @@ export default function CartAddedItems() {
                           MRP : {item.itemOfferAmount}/-
                         </p>
                       </div>
+
                       <div>
                         <motion.button className=""
                         whileHover={{scale: 1.3}}
                         whileTap={{scale: 1.3}}>
+
                           <img
                             src={Delete}
                             alt=""
@@ -211,9 +215,12 @@ export default function CartAddedItems() {
                 </div>
               </div>
             ))}
+            <div>
+              <button className="px-4 bg-[#FCA120] py-2 rounded-lg" onClick={()=>{navigate('/shop')}}>ADD MORE</button>
+            </div>
           </div>
           <div
-            className="payment flex flex-col rounded-md gap-4 min-w-[350px] max-h-[500px]  bg-[#FFD285] p-2"
+            className="payment flex flex-col rounded-md gap-4 md:min-w-[340px] max-h-[500px]  bg-[#FFD285] p-2"
             style={{ overflowY: "auto" }}
           >
             <div className="flex  w-full">
@@ -222,27 +229,27 @@ export default function CartAddedItems() {
             <div className="flex flex-col gap-5">
               <table className="text-base border-b border-gray-700">
                 <thead>
-                  <tr className="border-b border-gray-700">
-                    <th className="py-2">Name</th>
-                    <th className="px-6 py-2">Name</th>
-                    <th className="px-6 pr-3 py-2">Qnt</th>
-                    <th className="px-6 mr-3 py-2">MRP</th>
+                  <tr className="border-b border-gray-700 text-center">
+                    <th >Num</th>
+                    <th >Name</th>
+                    <th >Qnt</th>
+                    <th >MRP</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody >
                   {checkedItems.map((item, index) => (
-                    <tr key={index} className="text-left">
-                      <td className="px-6 py-2">{index + 1}.</td>
-                      <td className="px-6 py-2">{item.itemTitle}</td>
-                      <td className="px-6 pr-3 py-2">{item.quantity}</td>
-                      <td className="px-6 pr-3 py-2">
+                    <tr key={index} className="text-center ">
+                      <td className="pb-3">{index + 1}.</td>
+                      <td >{item.itemTitle}</td>
+                      <td >{item.quantity}</td>
+                      <td >
                         &#8377;{item.itemOfferAmount * item.quantity}
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-              <div className="flex flex-col  gap-2 px-5">
+              <div className="flex flex-col  gap-2 px-5 md:px-10 lg:px-5">
                 <div className="flex justify-between">
                   <p>Sub Total </p>
                   <p>&#8377; {totalAmount}</p>
@@ -266,6 +273,7 @@ export default function CartAddedItems() {
                   className="flex justify-between w-5/6 mx-auto p-2 rounded-lg border border-slate-900 bg-[#FCA120]"
                   whileHover={{scale: 1.1}}
           whileTap={{scale: 0.95}}
+
                 >
                   <p>&#8377;{totalAmount + deliveryCharge}</p>
                   <p>
