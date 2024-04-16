@@ -13,7 +13,7 @@ function SweetPage() {
   }
 
   return (
-    <div className="main_head flex flex-col md:p-12 p-4 md:p-12 gap-20">
+    <div className="main_head flex flex-col md:p-12 p-4 gap-20">
       <div className="flex flex-col justify-center items-center">
         <img src={lines1} alt="designed-arrow" className=" w-4/6 md:w-2/6" />
         <h1 className="text-4xl text-center font-semibold">Delicious Sweets</h1>
@@ -31,7 +31,7 @@ function SweetPage() {
                 <p className="">&#8377;{item.itemOfferAmount}</p>
                 <motion.button
                   onClick={() => {
-                    handleAddCartItem({ item });
+                    handleAddCartItem({ item: { ...item, quantity: 1 } });
                   }}
                   className="border border-white bg-transparent px-1 md:px-6 md:py-1 rounded-full"
                   whileHover={{ scale: 1.1 }}

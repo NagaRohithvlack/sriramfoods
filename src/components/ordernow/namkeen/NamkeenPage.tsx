@@ -31,7 +31,7 @@ function NamkeenPage() {
                 <p className="">&#8377;{item.itemOfferAmount}</p>
                 <motion.button
                   onClick={() => {
-                    handleAddCartItem({ item });
+                    handleAddCartItem({ item: { ...item, quantity: 1 } });
                   }}
                   className="border border-white bg-transparent px-1 md:px-6 md:py-1 rounded-full"
                   whileHover={{ scale: 1.1 }}

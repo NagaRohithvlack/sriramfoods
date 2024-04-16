@@ -1,21 +1,21 @@
-import { useDispatch } from "react-redux";
-import { addItem } from "../../header/header-comp/cart/CartSlice";
-import { SqCardPropType } from "../../../../utils/types/Types";
 import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { addItem } from "../CartSlice";
+import { SqCardPropType } from "../../../../../../utils/types/Types";
 
-export default function SquareCardItem({ item }: SqCardPropType) {
+export default function YouMayLikeItem({ item }: SqCardPropType) {
   const dispatch = useDispatch();
   function handleAddCartItem() {
-    const cartItem = {
+    const cartItem: any = {
       ...item,
       quantity: 1,
     };
-    // @ts-ignore
     dispatch(addItem(cartItem));
   }
+
   return (
     <div className=" relative rounded-lg">
-      <img src={item.img} alt="" className="rounded-lg h-full" />
+      <img src={item.img} alt="" className="rounded-lg h-full w-full" />
       <div className="absolute bottom-0 right-0 left-0 bg-black opacity-80  text-white flex justify-between items-center px-2 md:px-4 py-3 rounded-lg">
         <p className="">&#8377;{item.itemOfferAmount}</p>
         <motion.button

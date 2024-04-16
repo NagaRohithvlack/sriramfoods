@@ -90,7 +90,6 @@ function CarouselMap() {
           <motion.div
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
-            // exit={{ opacity: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
             key={currentIndex}
             className="flex justify-between items-center h-full w-full overflow-hidden "
