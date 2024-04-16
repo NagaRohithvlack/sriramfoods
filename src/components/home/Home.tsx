@@ -6,15 +6,13 @@ import GiftBox from "./giftbox/GiftBox.tsx";
 import ExperienceSairam from "./experience/experience-comp/ExperiencePage.tsx";
 import SquareCard from "./square-card/square-card-comp/SquareCardComp.tsx";
 
-import Crousal from "./carousel/Crousal.tsx";
-
 export default function Home() {
   return (
     <div className="main_head">
-      <Crousal />
+      {/*<Crousal />*/}
       <ExperienceSairam />
       <div className={`p-5`}>
-      <SquareCard />
+        <SquareCard />
       </div>
       <GiftBox />
       <LegacyPage />

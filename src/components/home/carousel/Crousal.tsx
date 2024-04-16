@@ -3,33 +3,33 @@ import { useState } from "react";
 import ExperienceSairam from "../experience/experience-comp/ExperiencePage.tsx";
 import CategoriesPage from "../categories/CategoriesPage.tsx";
 import GiftBoxPage from "../giftbox/giftbox-comp/GiftBoxPage.tsx";
-
-const variants = {
-  enter: (direction: number) => {
-    return {
-      x: direction > 0 ? "100%" : "-100%",
-      opacity: 0,
-      duration: 2,
-    };
-  },
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction: number) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? "100%" : "-100%",
-      opacity: 0,
-      duration: 2,
-    };
-  },
-};
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset: number, velocity: number) => {
-  return Math.abs(offset) * velocity;
-};
+//
+// const variants = {
+//   enter: (direction: number) => {
+//     return {
+//       x: direction > 0 ? "100%" : "-100%",
+//       opacity: 0,
+//       duration: 2,
+//     };
+//   },
+//   center: {
+//     zIndex: 1,
+//     x: 0,
+//     opacity: 1,
+//   },
+//   exit: (direction: number) => {
+//     return {
+//       zIndex: 0,
+//       x: direction < 0 ? "100%" : "-100%",
+//       opacity: 0,
+//       duration: 2,
+//     };
+//   },
+// };
+// const swipeConfidenceThreshold = 10000;
+// const swipePower = (offset: number, velocity: number) => {
+//   return Math.abs(offset) * velocity;
+// };
 
 const Crousal = () => {
   const [[page, direction], setPage] = useState([0, 0]);
@@ -44,25 +44,12 @@ const Crousal = () => {
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={page}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
+          initial={{ opacity: 0, x: 1000 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -1000 }}
           transition={{
             x: { type: "spring" },
-            opacity: { duration: 2 },
-          }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(_e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
-            }
+            opacity: { duration: 4 },
           }}
         >
           {componets[page]}

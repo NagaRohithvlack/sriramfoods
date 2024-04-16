@@ -4,9 +4,9 @@ import { SqCardPropType } from "../../../../utils/types/Types";
 import { motion } from "framer-motion";
 
 export default function SquareCardItem({ item }: SqCardPropType) {
-
   const dispatch = useDispatch();
   function handleAddCartItem() {
+    // @ts-ignore
     dispatch(addItem(item));
   }
   return (
@@ -16,9 +16,11 @@ export default function SquareCardItem({ item }: SqCardPropType) {
         <p className="">&#8377;{item.itemOfferAmount}</p>
         <motion.button
           className="border border-white bg-transparent px-1 md:px-6 md:py-1 rounded-full "
-          whileHover={{scale: 1.1}}
-          whileTap={{scale: 0.95}}
-          onClick={() => {handleAddCartItem()} } 
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => {
+            handleAddCartItem();
+          }}
         >
           {item.btntext}
         </motion.button>
