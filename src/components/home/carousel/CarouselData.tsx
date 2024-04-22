@@ -1,4 +1,3 @@
-
 import carousela1 from '../../../assets/images/carousela1.png';
 import carousela2 from '../../../assets/images/carousela2.png';
 import carousela3 from '../../../assets/images/carousela3.png';
