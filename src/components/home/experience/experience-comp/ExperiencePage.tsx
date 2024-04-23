@@ -27,7 +27,7 @@ export default function ExperienceSairam() {
           <img className="" src={curleyDesign} alt="curely" />
         </motion.div>
         <h1 className="text-2xl md:text-3xl text-center md:text-left  text-[#4A2E1F] ">
-          Experience SaiRam’s Delectable Ensemble. Savor the Taste of Authentic India.
+          Experience SaiRam's Delectable Ensemble. Savor the Taste of Authentic India.
         </h1>
         </div>
       </div>
