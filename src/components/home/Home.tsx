@@ -5,13 +5,13 @@ import OrderItems from "./order-items/OrderItems.tsx";
 import GiftBox from "./giftbox/GiftBox.tsx";
 import ExperienceSairam from "./experience/experience-comp/ExperiencePage.tsx";
 import SquareCard from "./square-card/square-card-comp/SquareCardComp.tsx";
-import Crousal from "./carousel/Crousal.tsx";
-import { crouselcomponents } from "./carousel/CarouselData.tsx";
+import CarouselSlick from "./carousel/carouselcomps/CarouselSlick.tsx";
 
 export default function Home() {
   return (
     <div className="main_head">
-      <Crousal components={crouselcomponents} />
+      <CarouselSlick />
+
       <ExperienceSairam />
       <div className={`p-5`}>
         <SquareCard />

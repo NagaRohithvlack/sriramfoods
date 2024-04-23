@@ -1,13 +1,13 @@
-import carousela1 from "../../../assets/images/carousela1.png";
-import carousela2 from "../../../assets/images/carousela2.png";
-import carousela3 from "../../../assets/images/carousela3.png";
-import carouselb1 from "../../../assets/images/carouselb1.png";
-import carouselb2 from "../../../assets/images/carouselb2.png";
-import carouselc1 from "../../../assets/images/carouselc1.png";
-import carouseld1 from "../../../assets/images/carouseld1.png";
-import lines1 from "../../../assets/images/lines1.png";
-import GiftBox from "../giftbox/GiftBox.tsx";
-import CategoriesPage from "../categories/CategoriesPage.tsx";
+
+import carousela1 from '../../../assets/images/carousela1.png';
+import carousela2 from '../../../assets/images/carousela2.png';
+import carousela3 from '../../../assets/images/carousela3.png';
+import carouselb1 from '../../../assets/images/carouselb1.png';
+import carouselb2 from '../../../assets/images/carouselb2.png';
+import carouselc1 from '../../../assets/images/carouselc1.png';
+import carouseld1 from '../../../assets/images/carouseld1.png';
+import lines1 from '../../../assets/images/lines1.png';
+
 
 export const CarouselData = [
   {
