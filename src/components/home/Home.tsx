@@ -11,9 +11,10 @@ export default function Home() {
   return (
     <div className="main_head">
       <CarouselSlick />
+
       <ExperienceSairam />
       <div className={`p-5`}>
-      <SquareCard />
+        <SquareCard />
       </div>
       <GiftBox />
       <LegacyPage />

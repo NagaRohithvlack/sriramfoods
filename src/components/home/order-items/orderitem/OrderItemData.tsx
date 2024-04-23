@@ -1,4 +1,4 @@
-import KajuKatli from "../../../../assets/images/kaju-katli.jpg";
+import KajuKatli from "../../../../assets/images/kaju-katli.jpeg";
 
 export const OrderItemData = [
   {
@@ -17,5 +17,4 @@ export const OrderItemData = [
     quantity: 0,
     usageNote: "Best Before 30-days after packing",
   },
-
 ];

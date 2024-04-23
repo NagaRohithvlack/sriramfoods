@@ -1,48 +1,20 @@
+import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
-import ExperienceSairam from "../experience/experience-comp/ExperiencePage.tsx";
-import CategoriesPage from "../categories/CategoriesPage.tsx";
-import GiftBoxPage from "../giftbox/giftbox-comp/GiftBoxPage.tsx";
+import { wrap } from "popmotion";
 
-const variants = {
-  enter: (direction: number) => {
-    return {
-      x: direction > 0 ? "100%" : "-100%",
-      opacity: 0,
-      duration: 2,
-    };
-  },
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction: number) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? "100%" : "-100%",
-      opacity: 0,
-      duration: 2,
-    };
-  },
-};
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset: number, velocity: number) => {
-  return Math.abs(offset) * velocity;
-};
-
-const Crousal = () => {
+const Carousel = ({ components }: any) => {
   const [[page, direction], setPage] = useState([0, 0]);
+  const index = wrap(0, components.length, page);
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
   };
-  const componets = [<CategoriesPage />, <GiftBoxPage />, <ExperienceSairam />];
 
   return (
-    <div className="w-screen h-screen relative flex justify-center items-center">
+    <div className="relative w-full  h-64 overflow-hidden mx-auto my-8">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
+          className="absolute w-full h-full flex justify-center items-center text-white text-2xl"
           key={page}
           custom={direction}
           variants={variants}
@@ -50,8 +22,8 @@ const Crousal = () => {
           animate="center"
           exit="exit"
           transition={{
-            x: { type: "spring" },
-            opacity: { duration: 2 },
+            x: { type: "spring", stiffness: 300, damping: 30 },
+            opacity: { duration: 1 },
           }}
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
@@ -65,23 +37,43 @@ const Crousal = () => {
             }
           }}
         >
-          {componets[page]}
+          {React.createElement(components[index])}
         </motion.div>
       </AnimatePresence>
       <div
-        className=" absolute top-1/2 right-1 transform -translate-y-1/2 -translate-x-1/2 bg-white border rounded-full w-10 h-10 flex justify-center items-center select-none cursor-pointer font-bold text-lg z-20"
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer p-2 bg-gray-300 z-20"
         onClick={() => paginate(1)}
       >
-        {"‣"}
+        Next
       </div>
       <div
-        className="absolute top-1/2 left-1 transform -translate-y-1/2 -translate-x-1/2 bg-white border rounded-full w-10 h-10 flex justify-center items-center select-none cursor-pointer font-bold text-lg z-20"
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 cursor-pointer p-2 bg-gray-300 z-20"
         onClick={() => paginate(-1)}
       >
-        {"<"}
+        Previous
       </div>
     </div>
   );
 };
 
-export default Crousal;
+const swipeConfidenceThreshold = 10000;
+const swipePower = (offset: number, velocity: number) => {
+  return Math.abs(offset) * velocity;
+};
+
+const variants = {
+  enter: (direction: number) => ({
+    x: direction > 0 ? 1000 : -1000,
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction: number) => ({
+    x: direction < 0 ? 1000 : -1000,
+    opacity: 0,
+  }),
+};
+
+export default Carousel;

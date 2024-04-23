@@ -6,7 +6,7 @@ export const NavListData = [
     {navLink: "Order Now", route: "/shop"},
     { navLink: "Cart", route: "/cart" },
     { navLink: "AboutUs", route: "/about" },
-    { navLink: "ContactUs", route: "/contact" },
+    { navLink: "ContactUs", route: "/contactus" },
     { navLink: "Logout", route: "/logout" },
 
   ];
