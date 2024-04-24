@@ -20,7 +20,7 @@ const variants = {
 export const Navigation = ({ closeMenu }: { closeMenu: () => void }) => (
   <motion.ul
     variants={variants}
-    className="nav-ul shadow-lg border border-slate-150 absolute h-screen left-0 w-[280px] bg-white"
+    className="nav-ul shadow-xl absolute h-screen left-0 top-0 w-[280px] bg-white "
   >
     {NavListData.map((item, index: number) => (
       <MenuItem item={item} key={index} closeMenu={closeMenu} />

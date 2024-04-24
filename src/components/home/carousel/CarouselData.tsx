@@ -39,7 +39,7 @@ export const CarouselData = [
     {
       line: lines1 ,
       label: "ALL TIME FAVOURITE",
-      title: "In the realm of desserts, flavors dance and emotions awaken.",
+      title: "In the realm of desserts, flavors dance",
       imgs: [
         { id: 1, img: carouseld1 },
       ],

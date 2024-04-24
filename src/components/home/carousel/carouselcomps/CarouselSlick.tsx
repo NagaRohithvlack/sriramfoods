@@ -17,13 +17,13 @@ const CarouselSlick = () => {
   };
 
   const LeftdoubleButton = () => (
-    <button className='absolute top-1/2 transform -translate-y-1/2 left-0' onClick={() => sliderRef.current.slickPrev()}>
+    <button className='w-10 absolute top-1/2 transform -translate-y-1/2 left-2' onClick={() => sliderRef.current.slickPrev()}>
       <Leftdouble />
     </button>
   );
 
   const RightdoubleButton = () => (
-    <button className='absolute top-1/2 transform -translate-y-1/2 right-0' onClick={() => sliderRef.current.slickNext()}>
+    <button className='w-10 absolute top-1/2 transform -translate-y-1/2 right-2' onClick={() => sliderRef.current.slickNext()}>
       <Rightdouble />
     </button>
   );
@@ -46,7 +46,7 @@ const CarouselSlick = () => {
     speed: 900,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 5000,
     pauseOnHover: true,
     nextArrow: <LeftdoubleButton />,
@@ -64,9 +64,9 @@ const CarouselSlick = () => {
         <div>
           <CarouselB />
         </div>
-        <div>
+        {/* <div className='hidden md:flex'>
           <CarouselC />
-        </div>
+        </div> */}
         <div>
           <CarouselD />
         </div>

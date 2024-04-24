@@ -32,7 +32,7 @@ export const MenuItem = ({
     >
       <NavLink
         to={item.route}
-        className="nav-li shadow-md px-4 py-2 text-sm font-semibold text-[#1C1E53]"
+        className="nav-li shadow-xl px-4 py-2 text-md font-semibold text-[#4A2E1F] bg-[#FFD285] rounded-md"
         onClick={closeMenu}
       >
         {item.navLink}

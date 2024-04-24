@@ -4,7 +4,7 @@ import lines1 from "../../../../assets/images/lines1.png"
 
 function CarouselC () {
     return(
-        <div className="overflow-hidden w-screen"
+        <div className="overflow-hidden w-screen "
         style={{
             backgroundImage: `url(${bgimg})`,
         }}>

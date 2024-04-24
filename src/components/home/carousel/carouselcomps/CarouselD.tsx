@@ -4,21 +4,24 @@ import lines1 from "../../../../assets/images/lines1.png"
 
 function CarouselD () {
     return(
-        <div className="overflow-hidden w-screen h-screen"
-        style={{
-            backgroundImage: `url(${bgimg})`,
-        }}>
+        <div className="mt-[70px] md:mt-0 overflow-hidden md:h-screen " style={{ backgroundImage: `url(${bgimg})` }}>
 
 
-            <div className="imgs flex flex-col h-full md:flex md:flex-row md:justify-between">
+            <div className=" flex flex-col h-full md:flex md:flex-row md:justify-between">
 
-                <div className="w-4/6 md:w-2/6 h-3/6 md:h-full flex relative order-first md:order-last">
+                {/* <div className="imgs md:w-3/6 h-[270px] md:h-full flex relative order-first md:order-last md:order-last ">
                 <div className="">
-                    <img src={CarouselData[3].imgs[0].img} alt="img1" className="absolute left-14 md:left-0 w-[756px] bottom-0 z-10" />
+                    <img src={CarouselData[3].imgs[0].img} alt="img1" className="absolute left-0 right-0 md:right-0 md:left-0 w-4/6 md:w-[556px] bottom-0 z-10" />
                     </div>
-                </div>
+                </div> */}
+                <div className="imgs md:w-3/6 h-[270px] md:h-full flex relative order-first md:order-last md:order-last ">
+    <div className="relative w-full flex justify-center">
+        <img src={CarouselData[3].imgs[0].img} alt="img1" className="absolute left-1/2 transform -translate-x-1/2 md:-translate-x-1/4 w-4/6 md:w-[556px] bottom-0 z-10" />
+    </div>
+</div>
 
-                <div className="para w-full md:w-3/6 sm:h-3/6 md:h-full md:pl-12 flex flex-col justify-center items-center gap-4 md:gap-10 p-6 ">
+
+                <div className="para w-full md:w-3/6 min-h-[285px] md:h-full md:pl-12 flex flex-col justify-center items-center gap-4 md:gap-10 p-4 md:p-6 ">
                     <div className="w-[246px] ">
                         <img src={lines1} alt="line" />
                         <h1 className="w-[246px] flex justify-center text-xl text-medium">{CarouselData[1].label}</h1>

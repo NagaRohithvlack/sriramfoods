@@ -4,18 +4,18 @@ import lines1 from "../../../../assets/images/lines1.png";
 
 function CarouselA() {
   return (
-    <div className="overflow-hidden h-screen " style={{ backgroundImage: `url(${bgimg})` }}>
+    <div className="mt-[70px] md:mt-0 overflow-hidden md:h-screen " style={{ backgroundImage: `url(${bgimg})` }}>
       <div className="flex flex-col h-full md:flex md:flex-row md:justify-between">
 
-        <div className="imgs md:w-3/6 h-3/6 md:h-full flex relative order-first md:order-last">
+        <div className="imgs md:w-3/6 h-[270px] md:h-full flex relative order-first md:order-last">
           <div className="">
-            <img src={CarouselData[0].imgs[1].img} alt="img2" className="w-2/6 absolute bottom-36 md:top-20 transform md:translate-y-3/4 translate-x-1/4" />
-            <img src={CarouselData[0].imgs[2].img} alt="img3" className="w-2/5 md:w-2/6 absolute md:top-8 bottom-48 md:bottom-1 left-2/4 transform -translate-x-1/4 md:translate-y-3/4 w-2/6" />
+            <img src={CarouselData[0].imgs[1].img} alt="img2" className="w-2/6 absolute bottom-36 md:top-20 transform md:translate-y-3/4 translate-x-1/4 " />
+            <img src={CarouselData[0].imgs[2].img} alt="img3" className="w-2/5 md:w-2/6 absolute md:top-8 bottom-42 md:bottom-1 left-2/4 transform -translate-x-1/4 md:translate-y-3/4 w-2/6" />
             <img src={CarouselData[0].imgs[0].img} alt="img1" className="absolute md:left-8 w-full md:w-[956px] bottom-4 md:bottom-8 z-10" />
           </div>
         </div>
 
-        <div className="para w-full md:w-3/6 sm:h-3/6 md:h-full md:pl-12 flex flex-col justify-center items-center gap-4 md:gap-10 p-6 ">
+        <div className="para w-full md:w-3/6 min-h-[285px] md:h-full md:pl-12 flex flex-col justify-center items-center gap-4 md:gap-10 p-4 md:p-6 ">
           <div className="w-[246px]">
             <img src={lines1} alt="line" />
             <h1 className="w-[246px] flex justify-center text-xl text-medium">{CarouselData[0].label}</h1>
